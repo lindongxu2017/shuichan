@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+        <title>水产交易平台</title>
+
+        <!-- Bootstrap -->
+        <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/main_public.css" rel="stylesheet">
+        <link href="css/main_reset.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+        <link  href="css/layout.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <style>
+            .home-title{
+                color: #8B8D8F;
+            }
+            .home .order-list{
+                padding-top: 10px;
+                padding-bottom: 10px;
+                border-bottom: 1px solid #C8C8C8;
+            }
+            .home .order-content{
+                padding: 15px;
+                min-height: 150px;
+                text-align: center;
+            }
+            .home .order-count{
+                font-weight: 900;
+                font-size: 55px;
+                margin-bottom: 0;
+            }
+            .home .order-content .border-r{
+                border-right: 1px dashed #C8C8C8
+            }
+            .home .current_month{
+                padding: 15px 60px;
+            }
+            .home .month_count{
+                height: 150px;
+                background: #D95222;
+                border-radius: 5px;
+                text-align: left;
+                padding-left: 100px;
+                padding-top: 10px;
+                line-height: 1.5
+            }
+            .home .whole_count{
+                height: 370px;
+                background: #0080E3;
+                border-radius: 5px;
+                padding-top: 67px;
+            }
+            .home .whole_count .order-count{
+                font-size: 100px;
+            }
+            .home .whole_count .order-count + p{
+                font-size: 24px;
+            }
+            .other-list li{
+                width: 20%;
+                float: left;
+                list-style: none;
+            }
+            .home .other-count{
+                padding-left: 0;
+                text-align: center;
+            }
+            .font-size-16{
+                font-size: 16px;
+            }
+        </style>
+    </head>
+    <body>
+            <!-- 顶部导航 -->
+            <div class="top-nav">
+                <div class="top-nav-logo">LOGO</div>
+                <div class="top-nav-link">
+                    <ul class="nav nav-tabs">
+                        <li role="presentation" class="active"><a href="">首页</a></li>
+                        <li role="presentation"><a href="user_management_user_list.html">用户管理</a></li>
+                        <li role="presentation"><a href="store_management_apply_list.html">店铺管理</a></li>
+                        <li role="presentation"><a href="#">订单管理</a></li>
+                        <li role="presentation"><a href="#">物流公司</a></li>
+                        <li role="presentation"><a href="#">系统管理</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            
+            <div class="row">
+                <div class="col-md-1 left-nav">
+                    <ul class="left-nav-link">
+                        <li class="left-nav-active">系统统计</li>
+                    </ul>
+                </div>
+                <div class="col-md-11 main-area">
+                    <!-- 主体内容 -->
+                    <div class="main-content">
+                        <div class="home-title">
+                            <h3>今日订单</h3>
+                        </div>
+                        <div class="row home">
+                            <div class="col-md-6">
+                                <div class="row order-list">
+                                    <div class="col-md-4 order-content">
+                                        <div class="border-r">
+                                            <p class="order-count orange">169</p>
+                                            <p class="gray font-size-16">总订单</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 order-content">
+                                        <div class="border-r">
+                                            <p class="order-count pink">100</p>
+                                            <p class="gray font-size-16">待审核订单</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 order-content">
+                                        <div>
+                                            <p class="order-count yellow">69</p>
+                                            <p class="gray font-size-16">已审核订单</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 order-content current_month" style="border-top: 1px solid #C8C8C8;padding-top:30px;">
+                                        <div class="white month_count" style="height:170px;padding-top:20px;">
+                                            <p class="order-count">69</p>
+                                            <p class="font-size-16">本月完成订单</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 order-content">
+                                <div class="white whole_count">
+                                    <p class="order-count">169</p>
+                                    <p class="font-size-16">完成订单总量</p>
+                                </div>
+                            </div>
+                            <div class="col-md-12 other-list" style="padding-top:30px">
+                                <ul>
+                                    <li>
+                                        <div class="col-md-12">
+                                        <div class="white month_count other-count"  style="background:#E8B607">
+                                            <p class="order-count">69</p>
+                                            <p class="font-size-16">本月完成订单</p>
+                                        </div>
+                                    </div>
+                                    </li>
+                                    <li>
+                                        <div class="col-md-12">
+                                        <div class="white month_count other-count" style="background:#DE135B">
+                                            <p class="order-count">69</p>
+                                            <p class="font-size-16">本月完成订单</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="col-md-12">
+                                        <div class="white month_count other-count" style="background:#6E69E2">
+                                            <p class="order-count">69</p>
+                                            <p class="font-size-16">本月完成订单</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="col-md-12">
+                                        <div class="white month_count other-count" style="background:#51CAA0">
+                                            <p class="order-count">69</p>
+                                            <p class="font-size-16">本月完成订单</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="col-md-12">
+                                        <div class="white month_count other-count" style="background:#139EDE">
+                                            <p class="order-count">69</p>
+                                            <p class="font-size-16">本月完成订单</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="lib/jquery/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+        <script src="js/tools.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

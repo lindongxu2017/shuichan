@@ -1,0 +1,167 @@
+
+/*body 全局背景色*/
+body{
+	background-color: #ECF0F4;
+}
+/*页面色调*/
+.gray{
+    color: #8B8D8F;
+}
+.orange{
+    color: #DE135B;
+}
+.pink{
+    color: #C81A8D;
+}
+.yellow{
+    color: #E5A610;
+}
+.white{
+	color: #fff;
+}
+.red{
+	color: red;
+}
+.green{
+	color: green;
+}
+.backColor-blue{
+	background-color: #003C7A;
+}
+/*border、margin、padding*/
+.border-b{
+	border-bottom: 1px solid #bbb;
+}
+/*顶部导航样式*/
+.top-nav{
+	height: 120px;
+	/* padding: 0 40px; */
+	background-color: #38B3B4;
+}
+.top-nav > div{
+	float: left;
+}
+.top-nav .top-nav-logo{
+	color: #fff;
+	width: 100%;
+	height: 120px;
+	font-size: 24px;
+	line-height: 120px;
+	text-align: center;
+	background: #213040;
+}
+.top-nav .top-nav-link{
+	/* margin-top: 66px; */
+	/* padding-left: 30px; */
+}
+.top-nav .top-nav-link a{
+	color: #fff;
+}
+.top-nav .top-nav-link .nav-tabs>li:hover a{
+	color: #000;
+}
+.top-nav .top-nav-link .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus{
+	background: #ECF0F4;
+	color: #000;
+}
+.nav-tabs{
+	background: #218E8F;
+}
+/* .nav-tabs>li:hover .nav-tabs>li a{
+	color: #000!important;
+} */
+.nav-tabs>li>a{
+	width: 120px;
+	height: 40px;
+	text-align: center;
+	margin-right: 0;
+	line-height: 1.5;
+	border: 0;
+	border-radius: 0;
+}
+.top-nav .top-title{
+	height: 81px;
+	line-height: 81px;
+	padding-left: 30px;
+	font-weight: 500;
+	color: #fff;
+	font-size: 32px;
+}
+/*侧栏导航样式*/
+.left-nav{
+	padding: 0;
+	min-height: 860px;
+	background-color: #213040;
+}
+.left-nav ul{
+	padding-left: 0;
+	margin-bottom: 0;
+}
+.left-nav ul a{
+	text-decoration: none;
+	color: #fff;
+}
+.left-nav ul li{
+	height: 44px;
+	color: #fff;
+	list-style: none;
+	line-height: 44px;
+	text-align: center;
+	position: relative;
+	border-bottom: 1px solid #16212E;
+}
+.left-nav ul li:hover{
+	cursor: pointer;
+	background: #16212E;
+}
+.left-nav .left-nav-active{
+	color: #fff;
+	background-color: #16212E;
+}
+/* .left-nav ul li:before{
+	content: '';
+	top: 20px;
+	left: 20px;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	position: absolute;
+	background-color: #fff;
+} */
+
+/*主体样式*/
+.main-area{
+	padding: 20px;
+}
+.main-content{
+	padding: 20px;
+	min-height: 800px;
+	padding-left: 30px;
+	border-radius: 10px;
+	background-color: #fff;
+}
+
+/*面包屑*/
+.breadcrumb{
+	background: none; 
+	border-radius: 0;
+	border-bottom: 1px solid #ddd;
+}
+.breadcrumb a{
+	color: #000;
+}
+.breadcrumb>li+li:before{
+	content: ">\00a0";
+	color: #8B8D8F;
+}
+
+
+
+/*表格操作 列宽度*/
+.width{
+	width: 200px;
+}
+/*表格序号 列宽度*/
+.border-width{
+	width: 100px;
+}

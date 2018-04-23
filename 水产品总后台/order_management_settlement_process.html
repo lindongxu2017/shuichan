@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+        <title>水产交易平台</title>
+
+        <!-- Bootstrap -->
+        <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/main_public.css" rel="stylesheet">
+        <link href="css/main_reset.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+        <link  href="css/layout.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <style>
+            a{
+                cursor: pointer;
+            }
+            .user-manager-btn-group{
+                text-align: left;
+                margin-bottom: 5px;
+            }
+            .user-manager-btn-group .form-control{
+                width: 170px;
+                margin-left: 10px;
+                display: inline-block;
+            }
+            input[type="radio"], input[type="checkbox"]{
+                margin: 0;
+            }
+            label{
+                margin: 0;
+            }
+            #selectAll{
+                vertical-align: sub;
+            }
+        </style>
+    </head>
+    <body>
+            <!-- 顶部导航 -->
+            <div class="top-nav">
+                <div class="top-nav-logo">LOGO</div>
+                <div class="top-nav-link">
+                    <ul class="nav nav-tabs">
+                        <li role="presentation"><a href="index.html">首页</a></li>
+                        <li role="presentation"><a href="user_management_user_list.html">用户管理</a></li>
+                        <li role="presentation"><a href="store_management_apply_list.html">店铺管理</a></li>
+                        <li role="presentation" class="active"><a href="order_management_order_list.html">订单管理</a></li>
+                        <li role="presentation"><a href="logistics_company.html">物流公司</a></li>
+                        <li role="presentation"><a href="system_management.html">系统管理</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            
+            <div class="row">
+                <!-- 侧栏导航 -->
+                <div class="col-md-1 left-nav">
+                    <ul class="left-nav-link">
+                        <a href="order_management_order_list.html"><li>订单列表</li></a>
+                        <a href="order_management_settlement_process.html"><li class="left-nav-active">结算处理</li></a>
+                        <a href="order_management_cash_record.html"><li>提现记录</li></a>
+                        <a href="order_management_return_order.html"><li>退货订单</li></a>
+                        <a href="order_management_return_reason.html"><li>退货原因</li></a>
+                    </ul>
+                </div>
+                <div class="col-md-11 main-area">
+                    <!-- 主体内容 -->
+                    <div class="main-content">
+                        <!-- 面包屑 -->
+                        <ol class="breadcrumb">
+                            <li><a href="order_management_order_list.html">订单管理</a></li>
+                            <li class="active">结算处理</li>
+                        </ol>
+                        <div class="row user-manager-btn-group">
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label >结算日期</label>
+                                    <input type="date" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-1">
+                                <div class="form-group">
+                                    <button class="btn  btn-primary backColor-blue">查询</button>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-8">
+                                <div class="form-group" style="text-align:right">
+                                    <!-- <button class="btn  btn-primary backColor-blue">立即结算</button> -->
+                                    <button class="btn  btn-primary backColor-blue">导出表格</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 表格 -->
+                        <table class="table table-hover">
+                            <thead>
+                                <tr class="white" style="background:#003C7A">
+                                    <th class="border-width">序号</th>
+                                    <th><input type="checkbox" id="selectAll" onclick="checkAll()"><label for="selectAll">全选</label></th>
+                                    <th>商户名称</th>
+                                    <th>类型</th>
+                                    <th>金额</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td><input type="checkbox">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+                                    <td>某某捕捞公司</td>
+                                    <td>捕捞公司</td>
+                                    <td>20000</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td><input type="checkbox">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+                                    <td>某某捕捞公司</td>
+                                    <td>捕捞公司</td>
+                                    <td>20000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                </div>
+            </div>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="lib/jquery/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+        <script src="js/tools.js"></script>
+        <script src="js/main.js"></script>
+
+        <script>
+            function checkAll(id){
+                if ( $('#selectAll').prop("checked") ) {
+                    $('tbody input').prop("checked",true)
+                }else{
+                    $('tbody input').prop("checked",false)
+                }
+            }
+        </script>
+
+    </body>
+</html> 

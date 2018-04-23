@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+        <title>水产交易平台</title>
+
+        <!-- Bootstrap -->
+        <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/main_public.css" rel="stylesheet">
+        <link href="css/main_reset.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+        <link  href="css/layout.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <style>
+            .goods_add{
+                padding-bottom: 20px;
+            }
+            @media (min-width: 768px){
+                .modal-dialog {
+                    width: 500px;
+                    margin: 15% auto;
+                }    
+            }
+            .modal-backdrop {
+                opacity: 0 !important;
+                filter: alpha(opacity=0) !important;
+            }
+            .classfy,.classfy-second{
+                min-width: 270px;
+                margin-bottom: 15px;
+            }
+            .classfy-second{
+                min-width: 270px;
+            } 
+            select.form-control{
+                background: none;
+                border: 1px solid #c8c8c8;  
+                border-radius: 5px;
+            }
+            .form-group label{
+                width: 100px;
+            }
+            .up_shelf span:hover{
+                cursor: pointer;
+            }
+            .up_shelf span{
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+            .shelf{
+                position: relative;
+            }
+            .shelf:before{
+                content: '\2714';
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                top: 1px;
+                left: -15px;
+                line-height: 1;
+                color:#38B3B4;
+            }
+        </style>
+    </head>
+    <body>
+            <!-- 顶部导航 -->
+            <div class="top-nav">
+                <div class="row" style="width:100%">
+                    <div class="col-sm-1" style="padding:0">
+                        <div class="top-nav-logo">LOGO</div>
+                    </div>
+                    <div class="col-sm-11" style="padding:0">
+                        <div class="top-title">商家管理后台</div>
+                        <div class="row top-nav-link">
+                            <ul class="nav nav-tabs">
+                                <li role="presentation"><a href="order_list.html">我的订单</a></li>
+                                <li role="presentation" class="active"><a href="my_goods.html">我的商品</a></li>
+                                <li role="presentation"><a href="marketing.html">营销功能</a></li>
+                                <li role="presentation"><a href="my_account.html">我的账户</a></li>
+                                <li role="presentation"><a href="store_set.html">店铺设置</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+
+            
+            <div class="row">
+                <!-- 侧栏导航 -->
+                <div class="col-md-1 left-nav">
+                    <ul class="left-nav-link">
+                        <a href="my_goods.html"><li class="left-nav-active">商品列表</li></a>
+                    </ul>
+                </div>
+                <div class="col-md-11 main-area">
+                    <!-- 主体内容 -->
+                    <div class="main-content">
+                        <!-- 面包屑 -->
+                        <ol class="breadcrumb">
+                            <li><a href="my_goods.html">我的商品</a></li>
+                            <li class="active">商品列表</li>
+                        </ol>
+                        <div class="row goods_add">
+                            <div class="col-sm-12" style="text-align:right">
+                                <a data-toggle="modal" data-target="#myModal"><button class="btn btn-custom">添加商品</button></a>
+                            </div>
+                        </div>
+                        <table class="table table-hover" >
+                            <thead class="white" style="background:#38B3B4">
+                                <tr>
+                                    <th class="border-width">序号</th>
+                                    <th>分类</th>
+                                    <th>商品名称</th>
+                                    <th>单位</th>
+                                    <th>数量</th>
+                                    <th>状态</th>
+                                    <th class="width">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>01</td>
+                                    <td>鱼类</td>
+                                    <td>章鱼</td>
+                                    <td>斤</td>
+                                    <td>1231</td>
+                                    <td class="up_shelf">
+                                        <span class="shelf" style="margin-right:20px">上架</span>
+                                        <span>下架</span>
+                                    </td>
+                                    <td>
+                                        <a href="add_details.html"><button class="btn btn-custom">修改</button></a>
+                                        <button class="btn btn-danger">删除</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- 模态框 -->
+                        <div class="modal fade " id="myModal" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                                        <h5 class="modal-title">入驻资料</h5>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <label>选择商品分类</label>
+                                            <select class="form-control classfy" onchange="choose()">
+                                                <option value="1">鱼类</option>
+                                                <option value="2">贝类</option>
+                                            </select>
+                                        </div> 
+                                        <div class="form-group">
+                                            <label>选择商品</label>
+                                            <select class="form-control classfy-second">
+                                                <!-- <option value="1">秋刀鱼</option> -->
+                                            </select>
+                                        </div> 
+                                        <div class="form-group">
+                                            <label></label>
+                                            <button class="btn btn-custom form-control" onclick="add_details()">下一步</button>
+                                        </div> 
+                                    </div>
+                                    <!-- <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div> -->
+                                </div><!-- /.modal-content -->
+                            </div><!-- /.modal-dialog -->
+                        </div><!-- /.modal -->
+
+                    </div>
+                </div>
+            </div>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="lib/jquery/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+        <script src="js/tools.js"></script>
+        <script src="js/main.js"></script>
+
+        <script>
+
+            var arr = ['秋刀鱼','黄花鱼'];
+            for (var i = 0; i < arr.length; i++) {
+                $('.classfy-second').append('<option value="'+i+'">'+arr[i]+'</option>')
+            };
+
+            function choose(){
+                if ($('.classfy').val() == 1) {
+                    arr = ['秋刀鱼','黄花鱼'];
+                }else if($('.classfy').val() == 2){
+                    arr = ['扇贝','田贝']
+                }
+                $('.classfy-second').html('');
+                for (var i = 0; i < arr.length; i++) {
+                    $('.classfy-second').append(' <option value=" ' + i + ' "> ' + arr[i] + '</option>')
+                };
+            }
+
+            function add_details(){
+                location.href = 'add_details.html?classfy=' + $('.classfy').val() + '&el=' + $('.classfy-second').val();
+            }
+
+            $('.up_shelf span').click(function(){
+                $('.up_shelf span').removeClass('shelf');
+                $(this).addClass('shelf')
+            })
+        </script>
+
+    </body>
+</html>

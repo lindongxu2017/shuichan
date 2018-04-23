@@ -1,0 +1,13 @@
+.bar-tab:before{
+	background-color: #C8C8C8;
+}
+.content-block{
+	margin: 0;
+}
+li{
+	list-style: none;
+}
+ul{
+	padding-left: 0;
+	margin: 0;
+}

@@ -1,0 +1,145 @@
+
+/*body 全局背景色*/
+body{
+	background-color: #ECF0F4;
+}
+/*页面色调*/
+.gray{
+    color: #8B8D8F;
+}
+.orange{
+    color: #DE135B;
+}
+.pink{
+    color: #C81A8D;
+}
+.yellow{
+    color: #E5A610;
+}
+.white{
+	color: #fff;
+}
+.red{
+	color: red;
+}
+.green{
+	color: green;
+}
+.backColor-blue{
+	background-color: #003C7A;
+}
+/*border、margin、padding*/
+.border-b{
+	border-bottom: 1px solid #bbb;
+}
+/*顶部导航样式*/
+.top-nav{
+	height: 75px;
+	/* padding: 0 40px; */
+	background-color: #004489;
+}
+.top-nav > div{
+	float: left;
+}
+.top-nav .top-nav-logo{
+	color: #fff;
+	width: 140px;
+	height: 100%;
+	font-size: 24px;
+	line-height: 75px;
+	text-align: center;
+}
+.top-nav .top-nav-link{
+	width: 70%;
+	margin-top: 31px;
+	padding-left: 30px;
+}
+.top-nav .top-nav-link a{
+	font-size: 16px;
+	color: #fff;
+}
+.top-nav .top-nav-link .nav-tabs>li:hover a{
+	color: #004489;
+}
+.top-nav .top-nav-link .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus{
+	color: #004489;
+}
+
+/*侧栏导航样式*/
+.left-nav{
+	padding: 0;
+	min-height: 860px;
+	background-color: #fff;
+}
+.left-nav ul{
+	padding-left: 0;
+	margin-bottom: 0;
+}
+.left-nav ul li{
+	height: 50px;
+	color: #8B8D8F;
+	list-style: none;
+	line-height: 50px;
+	text-align: center;
+	position: relative;
+	background-color: #fff;
+	border-bottom: 1px solid #8B8D8F;
+}
+.left-nav ul li:hover{
+	cursor: pointer;
+}
+.left-nav .left-nav-active{
+	color: #fff;
+	background-color: #003C7A;
+}
+.left-nav ul li:before{
+	content: '';
+	top: 20px;
+	left: 20px;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	position: absolute;
+	background-color: #fff;
+}
+
+/*主体样式*/
+.main-area{
+	padding: 20px;
+}
+.main-content{
+	padding: 20px;
+	min-height: 800px;
+	padding-left: 30px;
+	border-radius: 10px;
+	background-color: #fff;
+}
+
+/*面包屑*/
+.breadcrumb{
+	background: none; 
+	border-radius: 0;
+	border-bottom: 1px solid #ddd;
+}
+.breadcrumb a{
+	color: #8B8D8F;
+}
+.breadcrumb>li+li:before{
+	content: ">\00a0";
+	color: #8B8D8F;
+}
+
+/*add-btn*/
+.user-manager-btn-group{
+	text-align: right;
+	margin-bottom: 20px;
+}
+
+/*表格操作 列宽度*/
+.width{
+	width: 200px;
+}
+/*表格序号 列宽度*/
+.border-width{
+	width: 100px;
+}

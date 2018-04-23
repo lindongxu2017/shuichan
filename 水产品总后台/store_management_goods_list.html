@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+        <title>水产交易平台</title>
+
+        <!-- Bootstrap -->
+        <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/main_public.css" rel="stylesheet">
+        <link href="css/main_reset.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+        <link  href="css/layout.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+            <!-- 顶部导航 -->
+            <div class="top-nav">
+                <div class="top-nav-logo">LOGO</div>
+                <div class="top-nav-link">
+                    <ul class="nav nav-tabs">
+                        <li role="presentation"><a href="index.html">首页</a></li>
+                        <li role="presentation"><a href="user_management_user_list.html">用户管理</a></li>
+                        <li role="presentation"  class="active"><a href="store_management_apply_list.html">店铺管理</a></li>
+                        <li role="presentation"><a href="order_management_order_list.html">订单管理</a></li>
+                        <li role="presentation"><a href="logistics_company.html">物流公司</a></li>
+                        <li role="presentation"><a href="system_management.html">系统管理</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            
+            <div class="row">
+                <!-- 侧栏导航 -->
+                <div class="col-md-1 left-nav">
+                    <ul class="left-nav-link">
+                        <a href="store_management_apply_list.html"><li style="padding-left:25px;">入驻商申请列表</li></a>
+                        <a href="store_management_goods_classification.html"><li>商品分类</li></a>
+                        <a href="store_management_goods_list.html"><li class="left-nav-active">商品列表</li></a>
+                        <a href="store_management_goods_unit.html"><li>商品单位</li></a>
+                        <a href="store_management_region_set.html"><li>区域设置</li></a>
+                    </ul>
+                </div>
+                <div class="col-md-11 main-area">
+                    <!-- 主体内容 -->
+                    <div class="main-content">
+                        <!-- 面包屑 -->
+                        <ol class="breadcrumb">
+                            <li><a href="store_management_apply_list.html">店铺管理</a></li>
+                            <li class="active">商品列表</li>
+                        </ol>
+                        <div class="user-manager-btn-group">
+                            <a href="store_management_goods_add.html"><button class="btn btn-sm btn-primary backColor-blue">添加商品</button></a>
+                        </div>
+                        <!-- 表格 -->
+                        <table class="table table-hover">
+                            <thead>
+                                <tr class="white" style="background:#003C7A;">
+                                    <th class="border-width">序号</th>
+                                    <th>商品名称</th>
+                                    <th>分利</th>
+                                    <th>分佣比例</th>
+                                    <th>创建时间</th>
+                                    <th  class="width">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>螃蟹</td>
+                                    <td>100</td>
+                                    <td>1：2</td>
+                                    <td>2017-07-01 19:42:33</td>
+                                    <td>
+                                        <a href="store_management_goods_edit.html"><button class="btn btn-sm btn-primary backColor-blue">编辑</button></a>
+                                        <button class="btn btn-sm btn-danger">删除</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>螃蟹</td>
+                                    <td>100</td>
+                                    <td>1：2</td>
+                                    <td>2017-07-01 19:42:33</td>
+                                    <td>
+                                        <a href="store_management_goods_edit.html"><button class="btn btn-sm btn-primary backColor-blue">编辑</button></a>
+                                        <button class="btn btn-sm btn-danger">删除</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>螃蟹</td>
+                                    <td>100</td>
+                                    <td>1：2</td>
+                                    <td>2017-07-01 19:42:33</td>
+                                    <td>
+                                        <a href="store_management_goods_edit.html"><button class="btn btn-sm btn-primary backColor-blue">编辑</button></a>
+                                        <button class="btn btn-sm btn-danger">删除</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                </div>
+            </div>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="lib/jquery/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+        <script src="js/tools.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

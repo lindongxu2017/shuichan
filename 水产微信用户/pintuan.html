@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>水产</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- <link rel="shortcut icon" href="/favicon.ico"> -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="stylesheet" href="lib/sui/sm.min.css">
+    <link rel="stylesheet" href="lib/sui/sm-extend.min.css">
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+        .content{
+            background: #FAFAFA;
+            font-size: .7rem;
+            padding-bottom: 30px;
+        }
+        .card{
+            margin: 0;
+            margin-top: 7px;
+            box-shadow: none;
+        }
+        .font-size-75{
+            font-size: .75rem;
+        }
+        .card .list-block .item-text{
+            height: auto;
+        }
+        .card .list-block.media-list .item-inner > div{
+            margin: 3px;
+        }
+        .card .footer-content{
+            margin: 0;
+            width: 100%;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-group">
+        <div class="page page-current">
+            <!-- 标题栏 -->
+            <!-- <header class="bar bar-nav">
+                <a class="icon icon-me pull-left open-panel"></a>
+                <h1 class="title">标题</h1>
+            </header> -->
+            <!-- 底部导航 -->
+            <nav class="bar bar-tab backgoundColor-white">
+                <a class="tab-item external" href="index.html">
+                    <img class="icon" src="images/icon/home-default.png">
+                    <span class="tab-label">首页</span>
+                </a>
+                <!-- <a class="tab-item external" href="#">
+                    <img class="icon" src="images/icon/order-default.png">
+                    <span class="tab-label">我的订单</span>
+                </a> -->
+                <a class="tab-item external active" href="pintuan.html">
+                    <img class="icon" src="images/icon/pintuan.png">
+                    <span class="tab-label">捕捞拼团</span>
+                </a>
+                <a class="tab-item external" href="center.html">
+                    <img class="icon" src="images/icon/center-default.png">
+                    <span class="tab-label">个人中心</span>
+                </a>
+            </nav>
+
+            <!-- 内容区 -->
+            <div class="content">
+
+                <div class="card" onclick="go_details(1)">
+                    <!-- <div class="card-header">卡头</div> -->
+                    <div class="card-content">
+                        <div class="card-content-inner">
+                            <div class="list-block media-list">
+                                <ul>
+                                    <li>
+                                        <a href="#" class="item-content">
+                                            <div class="item-media"><img src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg" style='width: 4rem;'></div>
+                                            <div class="item-inner">
+                                                <div class="item-title-row">
+                                                    <div class="item-title default font-size-75">内容标题</div>
+                                                    <!-- <div class="item-after">$15</div> -->
+                                                </div>
+                                                <div class="item-subtitle red">￥100</div>
+                                                <div class="item-text blue">剩余/总份数：100/200吨</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer"><p class="footer-content">最低拼团数：100吨</p></div>
+                </div>
+
+                <div class="card" onclick="go_details(2)">
+                    <!-- <div class="card-header">卡头</div> -->
+                    <div class="card-content">
+                        <div class="card-content-inner">
+                            <div class="list-block media-list">
+                                <ul>
+                                    <li>
+                                        <a href="#" class="item-content">
+                                            <div class="item-media"><img src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg" style='width: 4rem;'></div>
+                                            <div class="item-inner">
+                                                <div class="item-title-row">
+                                                    <div class="item-title default font-size-75">内容标题</div>
+                                                    <!-- <div class="item-after">$15</div> -->
+                                                </div>
+                                                <div class="item-subtitle red">￥100</div>
+                                                <div class="item-text blue">剩余/总份数：100/200吨</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer"><p class="footer-content">最低拼团数：100吨</p></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script type='text/javascript' src='lib/sui/zepto.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='lib/sui/sm.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='lib/sui/sm-extend.min.js' charset='utf-8'></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script>
+
+        function go_details(index){
+            location.href = 'buy.html?index=' + index;
+        }
+
+        $.init()
+    </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>捕捞后台</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="stylesheet" href="lib/sui/sm.min.css">
+    <link rel="stylesheet" href="lib/sui/sm-extend.min.css">
+    <link rel="stylesheet" href="css/main_public.css">
+
+</head>
+<body>
+    <div class="page-group">
+        <div class="page page-current bg-white">
+            <!-- 这里是页面内容区 -->
+            <div class="content infinite-scroll bg-gray">
+                <div class="list-block">
+                    <ul>
+                        <li class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title">
+                                    <p style="margin:5px 0">余额</p>
+                                    <p style="margin:5px 0;color:red">10000.00</p>
+                                </div>
+                                <div class="item-after">
+                                    <p class="margin-0"><a href="cash.html" class="button button-fill">提现</a></p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="list-block mt-7">
+                    <ul>
+                        <li class="item-content item-link" v-for="item in list" @click="godetails(item.id)"> 
+                            <div class="item-inner padding-mt-15">
+                                <div class="item-title">
+                                    <p style="margin:0">管理员直接操作</p>
+                                    <p style="margin:0;color:gray">2017-02-05 12:00:00</p>
+                                    <p class="blue" style="margin:5px 0">+ 1000.00</p>
+                                </div>
+                                <div class="item-after"></div>
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- 加载提示符 -->
+                    <div class="infinite-scroll-preloader" v-if="current_length < total">
+                        <div class="preloader"></div>
+                    </div>
+                    <div class="noMore" v-if="current_length >= total">没有更多了...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type='text/javascript' src='lib/sui/zepto.min.js'></script>
+    <script type='text/javascript' src='lib/sui/sm.min.js'></script>
+    <script type='text/javascript' src='lib/sui/sm-extend.min.js'></script>
+    <script type="text/javascript" src="lib/vue/vue.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <script>
+        var vm = new Vue({
+            el: '.content',
+            data: {
+                list: ['', '', '', '', '', '', ''],
+                total: 15,
+                current_length: 0
+            },
+            mounted () {
+                this.loadMore();
+            },
+            methods: {
+                getData: function () {
+                    this.list.push('');
+                    this.current_length = this.list.length;
+                },
+                godetails: function (id) {
+                    var id = id || undefined;
+                    window.location = 'finance_log_details.html?id=' + id;
+                },
+                loadMore: function() {
+                    var self = this;
+                    var loading = false;
+                    $(document).on('infinite', function() {
+                        if (loading) return;
+                        loading = true;
+                        setTimeout(function() {
+                            loading = false;
+                            if (self.current_length >= self.total) {
+                                return false;
+                            }
+                            // ajax获取数据
+                            self.getData();
+                            $.refreshScroller();
+                        }, 500);
+                    });
+                }
+            }
+        })
+        $.init();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+        <title>水产交易平台</title>
+
+        <!-- Bootstrap -->
+        <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/main_public.css" rel="stylesheet">
+        <link href="css/main_reset.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+        <link  href="css/layout.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <style>
+            .form-control{
+                width: auto;
+                margin-bottom: 15px;
+                background: none;
+                border: 1px solid #c8c8c8;  
+                border-radius: 5px;
+                width: 100%;
+            }
+            .uncheck{
+                -moz-user-select:none; /*火狐*/
+                -webkit-user-select:none; /*webkit浏览器*/
+                -ms-user-select:none; /*IE10*/
+                 -khtml-user-select:none; /*早期浏览器*/
+                user-select:none;
+            }
+            .switch{
+                padding-left: 15px;
+                padding-top: 7px;
+                margin-bottom: 15px; 
+                margin-right: 15px;
+            }
+            .upload{
+                text-align: center;
+            }
+            .upload img{
+                width: 130px;
+                height: 100px;
+            }
+            .upload input{
+                width: 72px;
+                height: 25px;
+                margin: auto;
+                margin-top: 10px;
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+            <!-- 顶部导航 -->
+            <div class="top-nav">
+                <div class="row" style="width:100%">
+                    <div class="col-md-1" style="padding:0">
+                        <div class="top-nav-logo">LOGO</div>
+                    </div>
+                    <div class="col-md-11" style="padding:0">
+                        <div class="top-title">商家管理后台</div>
+                        <div class="row top-nav-link">
+                            <ul class="nav nav-tabs">
+                                <li role="presentation"><a href="order_list.html">我的订单</a></li>
+                                <li role="presentation"><a href="my_goods.html">我的商品</a></li>
+                                <li role="presentation"><a href="marketing.html">营销功能</a></li>
+                                <li role="presentation"><a href="my_account.html">我的账户</a></li>
+                                <li role="presentation" class="active"><a href="store_set.html">店铺设置</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="row">
+                <!-- 侧栏导航 -->
+                <div class="col-md-1 left-nav">
+                    <ul class="left-nav-link">
+                        <a href="store_set.html"><li class="left-nav-active">店铺设置</li></a>
+                        <a href="store_info.html"><li>商户资料</li></a>
+                        <a href="store_settled.html"><li>商家入驻</li></a>
+                    </ul>
+                </div>
+                <div class="col-md-11 main-area">
+                    <!-- 主体内容 -->
+                    <div class="main-content">
+                        <!-- 面包屑 -->
+                        <ol class="breadcrumb">
+                            <li><a href="store_set.html">店铺设置</a></li>
+                            <li class="active">店铺设置</li>
+                        </ol>
+
+                        <form class="form-horizontal">
+                            <div class="row">
+                                <div class="col-md-10 form-group">
+                                    <label class="col-md-1 control-label">店铺名称</label>
+                                    <div class="col-md-3">
+                                        <input type="text" class="form-control" placeholder="请输入商品名称">
+                                    </div>
+                                    <label class="col-md-1 control-label">邮箱</label>
+                                    <div class="col-md-3">
+                                        <input type="email" class="form-control" placeholder="请输入邮箱">
+                                    </div>
+                                    <label class="col-md-2 control-label">店铺负责电话</label>
+                                    <div class="col-md-2">
+                                        <input type="text" class="form-control" placeholder="请输入店铺负责电话">
+                                    </div>
+                                    <label class="col-md-1 control-label">选择城市</label>
+                                    <div class="col-md-11">
+                                        <select name="" id="" class="form-control" style="width:25%">
+                                            <option value="1">深圳</option>
+                                            <option value="2">广州</option>
+                                        </select>
+                                    </div>
+                                    <label class="col-md-1 control-label">店铺地址</label>
+                                    <div class="col-md-11">
+                                        <input type="text" class="form-control" placeholder="请输入店铺地址">
+                                    </div>
+
+                                    <label class="col-md-1 control-label">是否营业</label>
+                                    <div class="col-md-11">
+                                        <label class="switch"><input type="radio" name="use"> <span class="uncheck">是</span></label>
+                                        <label><input type="radio" name="use"> <span class="uncheck">否</span></label>
+                                    </div>
+
+                                    <label class="col-md-1 control-label">店铺介绍</label>
+                                    <div class="col-md-11">
+                                        <textarea placeholder="请输入店铺介绍" class="form-control"></textarea>
+                                    </div>
+
+                                    <label class="col-md-1 control-label">店铺公告</label>
+                                    <div class="col-md-11">
+                                        <textarea placeholder="请输入店铺公告" class="form-control"></textarea>
+                                    </div>
+
+                                    <div class="col-md-offset-1 col-md-10" style="margin-top:30px;padding-left:30px;">
+                                        <button type="submit" class="btn btn-custom">提交</button>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2 upload">
+                                    <img src="images/img/upload.png">   <!-- 上传图片之后修改 src -->
+                                    <input type="file">
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="lib/jquery/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+        <script src="js/tools.js"></script>
+        <script src="js/main.js"></script>
+
+        <script>
+
+        </script>
+
+    </body>
+</html>

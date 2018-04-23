@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+        <title>水产交易平台</title>
+
+        <!-- Bootstrap -->
+        <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/main_public.css" rel="stylesheet">
+        <link href="css/main_reset.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+        <link  href="css/layout.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <style>
+            body{
+                background: #3B4966;
+            }
+            li {
+                list-style: none;
+            }
+            .register{
+                margin-top: 100px;
+            }
+            .register .logo,.register h2{
+                text-align: center;
+                margin-bottom: 50px;
+                color: #fff;
+            }
+            .register .register-box{
+                width: 1200px;
+                min-height: 430px;
+                background: #fff;
+                padding: 15px 30px;
+                box-shadow: 0 10px 10px #2F3A51;
+                margin: auto;
+            }
+            .register-title{
+                height: 70px;
+                line-height: 30px;
+                font-size: 24px;
+                padding: 30px;
+                color: #3B4966;
+            }
+            .register-box .btn{
+                width: auto;
+                margin-top: 30px;
+                background: #3B4966;
+                color: #fff;
+            }
+            .step {
+                text-align: center;
+            }
+            .step > ul {
+                width: auto;
+                padding-left: 0;
+                margin-top: 30px;
+                display: inline-block;
+            }
+            .step > ul > li {
+                float: left;
+                padding-left: 120px;
+                position: relative;
+            }
+            .step > ul > li:before {
+                content: '';
+                width: 100px;
+                height: 1px;
+                position: absolute;
+                left: 10px;
+                top: 9px;
+                background: #999;
+            }
+            .step-active {
+                color: red;
+            }
+            .step-content {
+                display: none;
+            }
+            .form {
+                width: 732px;
+                margin: auto;
+                margin-top: 50px;
+            }
+            .form .form-group {
+                margin: 15px;
+            }
+            .form .form-group label {
+                width: 80px;
+            }
+            .form .form-group input {
+                width: 220px;
+                height: 34px;
+                outline: none;
+                text-indent: 5px;
+            }
+            .row .col-md-6 {
+                padding-left: 0;
+            }
+            .label-custom {
+                font-weight: bold;
+                padding: 15px;
+            }
+            .upload {
+                text-align: left;
+                padding-left: 15px;
+            }
+            .upload > div {
+                display: inline-block;
+                margin-right: 10px;
+                margin-bottom: 10px;
+                vertical-align: text-bottom;
+            }
+            .upload-wrapper {
+                width: 100px;
+                height: 100px;
+                border: 1px dashed #999;
+                position: relative;
+                text-align: center;
+                line-height: 100px;
+            }
+            .upload-wrapper input[type='file'] {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0;
+            }
+            .img-wrapper {
+                width: 100px;
+                height: 100px;
+                border: 1px solid #999;
+                position: relative;
+            }
+            .img-wrapper span {
+                width: 14px;
+                height: 16px;
+                border-radius: 50%;
+                top: 0;
+                right: 0;
+                position: absolute;
+            }
+            .img-wrapper span:before {
+                color: red;
+            }
+            .img-wrapper img {
+                width: 100%;
+            }
+            .status {
+                font-size: 24px;
+            }
+            .status,.login{
+                text-align: center;
+            }
+            .code {
+                position: relative;
+            }
+            .code .getcode {
+                position: absolute;
+                height: 34px;
+                top: 0;
+                left: 223px;
+                margin-top: 0;
+            }
+        </style>
+    </head>
+    <body>
+            
+        <div class="row register">
+            <h2>注册</h2>
+            <div class="register-box">
+               <div class="step">
+                   <ul>
+                       <li class="step-active">注册</li>
+                       <li>填写企业信息</li>
+                       <li>填写店铺信息</li>
+                       <li>完成注册</li>
+                   </ul>
+               </div>
+               <div class="form">
+                    <div class="step-content">
+                        <div class="form-group">
+                            <label>账&nbsp&nbsp&nbsp号：</label>
+                            <input type="text" placeholder="请输入手机号码" id="phone">
+                        </div>
+                        <div class="form-group">
+                            <label>密&nbsp&nbsp&nbsp码：</label>
+                            <input type="password" placeholder="请输入密码">
+                        </div>
+                        <div class="form-group code">
+                            <label>验证码：</label>
+                            <input type="text" placeholder="请输入验证码">
+                            <button class="btn getcode" onclick="getcode(this)">获取</button>
+                        </div>
+                        <div class="form-group">
+                            <label></label>
+                            <button class="btn" onclick="step(1, this)">下一步</button>
+                        </div>
+                    </div>
+                    <div class="step-content">
+                        <div class="form-group">
+                            <label>企业名称：</label>
+                            <input type="text" placeholder="请输入企业名称">
+                        </div>
+                        <div class="form-group">
+                            <label>企业地址：</label>
+                            <input type="text" placeholder="请输入企业地址">
+                        </div>
+                        <div class="form-group">
+                            <label>企业邮箱：</label>
+                            <input type="text" placeholder="请输入企业邮箱">
+                        </div>
+                        <div class="form-group">
+                            <label>企业电话：</label>
+                            <input type="text" placeholder="请输入企业电话">
+                        </div>
+                        <div class="form-group">
+                            <label>联系人：</label>
+                            <input type="text" placeholder="请输入联系人名称">
+                        </div>
+                        <div class="form-group">
+                            <label></label>
+                            <button class="btn" onclick="step(0)">上一步</button>
+                            <button class="btn" onclick="step(2, this)">下一步</button>
+                        </div>
+                    </div>
+                    <div class="step-content">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>店铺名称：</label>
+                                    <input type="text" placeholder="请输入店铺名称">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>商家地址：</label>
+                                    <input type="text" placeholder="请输入商家地址">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p class="label-custom">在华企业备案登记</p>
+                                <div class="upload">
+                                    <div class="upload-wrapper">
+                                        <span>点击上传</span>
+                                        <input type="file" onchange="upload(1)" id="upload-1">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="label-custom">出口资质</p>
+                                <div class="upload">
+                                    <div class="upload-wrapper">
+                                        <span>点击上传</span>
+                                        <input type="file" onchange="upload(2)" id="upload-2">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p class="label-custom">在华企业备案登记</p>
+                                <div class="upload">
+                                    <div class="upload-wrapper">
+                                        <span>点击上传</span>
+                                        <input type="file" onchange="upload(3)" id="upload-3">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="label-custom">企业照片</p>
+                                <div class="upload">
+                                    <div class="upload-wrapper">
+                                        <span>点击上传</span>
+                                        <input type="file" onchange="upload(4)" id="upload-4">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn" onclick="step(1)">上一步</button>
+                            <button class="btn" onclick="step(3, this)">提交</button>
+                        </div>
+                    </div>
+               </div>
+               <div class="step-content">
+                    <p class="status">恭喜，你已完成注册</p>
+                    <div class="login">
+                        <button class="btn">登录</button>
+                    </div>
+               </div>
+            </div>
+        </div>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="lib/jquery/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+        <script src="js/tools.js"></script>
+        <script src="js/main.js"></script>
+
+        <script>
+            // 获取验证码
+            function getcode (obj) {
+                if (!(/^1[3|4|5|8][0-9]\d{4,8}$/.test($('#phone').val()))) {
+                    alert('请输入正确的手机号码');
+                    return false;
+                };
+                $(obj).attr('disabled', true);
+                var time = 5;
+                var Timer = setInterval(function () {
+                    time--;
+                    $(obj).html(time + 's');
+                },1000)
+                setTimeout(function () {
+                    $(obj).html('获取');
+                    clearInterval(Timer)
+                    $(obj).attr('disabled', false);
+                }, time*1000 + 1000)
+            }
+            
+            // 初始化显示step-1
+            $('.step-content').eq(0).show();
+            // 步骤跳转
+            function step (index, obj) {
+                if (!checkform(index, obj)) {
+
+                } else {
+                    $('.step ul li').removeClass('step-active');
+                    $('.step ul li').eq(index).addClass('step-active');
+                    $('.step-content').hide();
+                    $('.step-content').eq(index).show();
+                }
+            }
+            // 图片上传预览
+            function upload (key) {
+                var file = $('#upload-'+key)[0].files[0];
+                var url = window.URL.createObjectURL(file);
+                var groundparent = $('#upload-'+key).parent('.upload-wrapper').parent('.upload');
+                var div = $('<div class="img-wrapper"></div>');
+                var img = $('<img src='+ url +'>');
+                var span = $('<span class="glyphicon glyphicon-remove" onclick="imgdel(this)"></span>')
+                div.append(img);
+                div.append(span);
+                groundparent.prepend(div);
+            }
+            // 删除图片
+            function imgdel (obj) {
+                $(obj).parent('.img-wrapper').remove();
+            }
+            //表单验证
+            function checkform (index, obj) {
+                if (!obj) {
+                    return true;
+                }else{
+                    var parent = $(obj).parent('.form-group').parent('.step-content');
+                    for (var i = 0; i < $(parent).find('input').length; i++) {
+                        if (!$(parent).find('input').eq(i).val()) {
+                            alert('请填写完整信息');
+                            return false;
+                        }
+                    };
+                    return true;
+                }
+            }
+        </script>
+
+    </body>
+</html>

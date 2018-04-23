@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>捕捞后台</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="stylesheet" href="lib/sui/sm.min.css">
+    <link rel="stylesheet" href="lib/sui/sm-extend.min.css">
+    <link rel="stylesheet" href="css/main_public.css">
+
+</head>
+<body>
+    <div class="page-group">
+        <div class="page page-current bg-white">
+            <!-- nav导航 -->
+            <nav class="bar bar-tab">
+                <a class="tab-item external active">
+                    <img class="icon icon-home" src="images/icon/order-checked.png">
+                    <span class="tab-label">订单管理</span>
+                </a>
+                <a class="tab-item external" href="launch_pintuan.html">
+                    <img class="icon icon-home" src="images/icon/pintuan-default.png">
+                    <span class="tab-label">发起拼团</span>
+                </a>
+                <a class="tab-item external" href="shop_info.html">
+                    <img class="icon icon-home" src="images/icon/info-default.png">
+                    <span class="tab-label">店铺资料</span>
+                </a>
+                <a class="tab-item external" href="center.html">
+                    <img class="icon icon-home" src="images/icon/center-default.png">
+                    <span class="tab-label">我的账户</span>
+                </a>
+            </nav>
+            <!-- 这里是页面内容区 -->
+            <div class="content infinite-scroll bg-gray">
+                <!-- 搜索栏 -->
+                <div class="bar bar-header-secondary">
+                    <div class="searchbar row">
+                        <div class="search-input col-80" style="width:85%;margin-left:0">
+                            <label class="icon icon-search" for="search"></label>
+                            <input type="search" id='search' placeholder='输入关键字...'/>
+                        </div>
+                        <a class="button button-fill button-primary col-15"
+                        style="margin-top:-6px;background:none;color:#0894ec;width:80px;width:15%;margin-left:0">搜索</a>
+                    </div>
+                </div>
+                <div class="tab-link-box bg-white" style="margin-top:44px;">
+                    <a href="#tab1" class="tab-link active button" @click="tab_change(0)">拼单中</a>
+                    <a href="#tab2" class="tab-link button" @click="tab_change(1)">拼单完成</a>
+                    <a href="#tab3" class="tab-link button" @click="tab_change(2)">已结算</a>
+                    <a href="#tab4" class="tab-link button" @click="tab_change(3)">失败</a>
+                </div>
+                <div>
+                    <div class="tabs">
+                        <div id="tab1" class="tab active">
+                            <div class="order-content bg-white mt-7" v-for="item in list[0]">
+                                <p class="order-time">2017-09-13 12:00:00</p>
+                                <div class="list-block">
+                                    <ul>
+                                        <li class="item-content item-link" @click="godetails(item.id)">
+                                            <div class="item-inner">
+                                                <div class="item-title">
+                                                    <div class="right-dashed">
+                                                        <p style="font-size:1rem;color:#0894ec;">100吨</p>
+                                                        <p style="font-size:12px">已购买数</p>
+                                                    </div>
+                                                    <div>
+                                                        <p style="font-size:1rem;">商品名称</p>
+                                                        <p style="font-size:12px">400.00/斤</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="order-info">
+                                    <div class="order-left"><p class="no-wrap">总数:<span>1000吨</span></p></div>
+                                    <div class="order-middle"><p class="no-wrap">最小起定数:100吨</p></div>
+                                    <div class="order-right"><button class="order-btn-xs">拼单中</button></div>
+                                </div>
+                                <div class="order-edit">编辑</div>
+                            </div>
+                            <!-- 加载提示符 -->
+                            <div class="infinite-scroll-preloader" v-if="current_length[0] < total[0]">
+                                <div class="preloader"></div>
+                            </div>
+                            <div class="noMore" v-if="current_length[0] >= total[0]">没有更多了...</div>
+                        </div>
+                        <div id="tab2" class="tab">
+                            <div class="order-content bg-white mt-7" v-for="item in list[1]">
+                                <p class="order-time">2017-09-13 12:00:00</p>
+                                <div class="list-block">
+                                    <ul>
+                                        <li class="item-content item-link" @click="godetails(item.id)">
+                                            <div class="item-inner">
+                                                <div class="item-title">
+                                                    <div class="right-dashed">
+                                                        <p style="font-size:1rem;color:#0894ec;">100吨</p>
+                                                        <p style="font-size:12px">已购买数</p>
+                                                    </div>
+                                                    <div>
+                                                        <p style="font-size:1rem;">商品名称</p>
+                                                        <p style="font-size:12px">400.00/斤</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="order-info">
+                                    <div class="order-left"><p class="no-wrap">总数:<span>1000吨</span></p></div>
+                                    <div class="order-middle"><p class="no-wrap">最小起定数:100吨</p></div>
+                                    <div class="order-right"><button class="order-btn-xs">拼单中</button></div>
+                                </div>
+                                <div class="order-edit">编辑</div>
+                            </div>
+                            <!-- 加载提示符 -->
+                            <div class="infinite-scroll-preloader" v-if="current_length[1] < total[1]">
+                                <div class="preloader"></div>
+                            </div>
+                            <div class="noMore" v-if="current_length[1] >= total[1]">没有更多了...</div>
+                        </div>
+                        <div id="tab3" class="tab">
+                            <div class="order-content bg-white mt-7" v-for="item in list[2]">
+                                <p class="order-time">2017-09-13 12:00:00</p>
+                                <div class="list-block">
+                                    <ul>
+                                        <li class="item-content item-link" @click="godetails(item.id)">
+                                            <div class="item-inner">
+                                                <div class="item-title">
+                                                    <div class="right-dashed">
+                                                        <p style="font-size:1rem;color:#0894ec;">100吨</p>
+                                                        <p style="font-size:12px">已购买数</p>
+                                                    </div>
+                                                    <div>
+                                                        <p style="font-size:1rem;">商品名称</p>
+                                                        <p style="font-size:12px">400.00/斤</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="order-info">
+                                    <div class="order-left"><p class="no-wrap">总数:<span>1000吨</span></p></div>
+                                    <div class="order-middle"><p class="no-wrap">最小起定数:100吨</p></div>
+                                    <div class="order-right"><button class="order-btn-xs">拼单中</button></div>
+                                </div>
+                                <div class="order-edit">编辑</div>
+                            </div>
+                            <!-- 加载提示符 -->
+                            <div class="infinite-scroll-preloader" v-if="current_length[2] < total[2]">
+                                <div class="preloader"></div>
+                            </div>
+                            <div class="noMore" v-if="current_length[2] >= total[2]">没有更多了...</div>
+                        </div>
+                        <div id="tab4" class="tab">
+                            <div class="order-content bg-white mt-7" v-for="item in list[3]">
+                                <p class="order-time">2017-09-13 12:00:00</p>
+                                <div class="list-block">
+                                    <ul>
+                                        <li class="item-content item-link" @click="godetails(item.id)">
+                                            <div class="item-inner">
+                                                <div class="item-title">
+                                                    <div class="right-dashed">
+                                                        <p style="font-size:1rem;color:#0894ec;">100吨</p>
+                                                        <p style="font-size:12px">已购买数</p>
+                                                    </div>
+                                                    <div>
+                                                        <p style="font-size:1rem;">商品名称</p>
+                                                        <p style="font-size:12px">400.00/斤</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="order-info">
+                                    <div class="order-left"><p class="no-wrap">总数:<span>1000吨</span></p></div>
+                                    <div class="order-middle"><p class="no-wrap">最小起定数:100吨</p></div>
+                                    <div class="order-right"><button class="order-btn-xs">拼单中</button></div>
+                                </div>
+                                <div class="order-edit">编辑</div>
+                            </div>
+                            <!-- 加载提示符 -->
+                            <div class="infinite-scroll-preloader" v-if="current_length[3] < total[3]">
+                                <div class="preloader"></div>
+                            </div>
+                            <div class="noMore" v-if="current_length[3] >= total[3]">没有更多了...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type='text/javascript' src='lib/sui/zepto.min.js'></script>
+    <script type='text/javascript' src='lib/sui/sm.min.js'></script>
+    <script type='text/javascript' src='lib/sui/sm-extend.min.js'></script>
+    <script type="text/javascript" src="lib/vue/vue.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <script>
+        var vm = new Vue({
+            el: '.content',
+            data: {
+                list: [[], [], [], []],
+                tab: 0,
+                current_page: [0, 0, 0, 0],
+                current_length: [0, 0, 0, 0],
+                total: [-1, -1, -1, -1],
+                // ajax 传参
+                search: {
+                    value: '',
+                    page: 1
+                }
+            },
+            mounted () {
+                this.getData(0);
+                this.getData(1);
+                this.getData(2);
+                this.getData(3);
+                this.loadMore();
+            },
+            methods: {
+                getData: function (index) {
+                    this.current_page[index] ++;
+                    this.search.page = this.current_page[index];
+                    // ajax 模拟添加数据  传search
+                    this.list[index].push({}, {}, {});
+                    this.current_length[index] = this.list[index].length;
+                    this.total[index] = 12;
+
+                    console.log(this.list)
+
+                },
+                godetails: function (id) {
+                    window.location = 'order_details.html?id=' + id;
+                },
+                search: function () {
+                    this.page_current[this.tab] = 0;
+                },
+                tab_change: function (index) {
+                    this.tab == index?this.tab = this.tab : this.tab = index;
+                },
+                loadMore: function() {
+                    var self = this;
+                    var loading = false;
+                    $(document).on('infinite', function() {
+                        if (loading) return;
+                        loading = true;
+                        setTimeout(function() {
+                            loading = false;
+                            if (self.current_length[self.tab] >= self.total[self.tab]) {
+                                return false;
+                            }
+                            // ajax获取数据
+                            console.log('-----' + self.tab)
+                            self.getData(self.tab);
+                            $.refreshScroller();
+                        }, 500);
+                    });
+                }
+            }
+        })
+        $.init();
+    </script>
+
+</body>
+</html>

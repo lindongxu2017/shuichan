@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+        <title>水产交易平台</title>
+
+        <!-- Bootstrap -->
+        <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/main_public.css" rel="stylesheet">
+        <link href="css/main_reset.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+        <link  href="css/layout.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <style>
+            .jurisdiction-group{
+                min-height: 44px;
+            }
+            .jurisdiction-group label{
+                text-align:left!important;
+                color: #999;
+            }
+            .check_box{
+                height: 29px;
+            }
+            .panel-title{
+                color: #fff;
+            }
+            .panel-default>.backColor-blue{
+                background-color: #003C7A;
+            }
+            .form-horizontal .control-label{
+                text-align: left;
+            }
+        </style>
+    </head>
+    <body>
+            <!-- 顶部导航 -->
+            <div class="top-nav">
+                <div class="top-nav-logo">LOGO</div>
+                <div class="top-nav-link">
+                    <ul class="nav nav-tabs">
+                        <li role="presentation"><a href="index.html">首页</a></li>
+                        <li role="presentation" class="active"><a href="user_management_user_list.html">用户管理</a></li>
+                        <li role="presentation"><a href="store_management_apply_list.html">店铺管理</a></li>
+                        <li role="presentation"><a href="order_management_order_list.html">订单管理</a></li>
+                        <li role="presentation"><a href="logistics_company.html">物流公司</a></li>
+                        <li role="presentation"><a href="system_management.html">系统管理</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            
+            <div class="row">
+                <!-- 侧栏导航 -->
+                <div class="col-md-1 left-nav">
+                    <ul class="left-nav-link">
+                        <a href="user_management_user_list.html"><li>用户列表</li></a>
+                        <a href="user_management_role_list.html"><li class="left-nav-active">角色列表</li></a>
+                        <a href="user_management_store_list.html"><li>商户列表</li></a>
+                        <a href="user_management_member_list.html"><li>会员列表</li></a>
+                        <a href="user_management_member_balance.html"><li>会员余额</li></a>
+                    </ul>
+                </div>
+                <div class="col-md-11 main-area">
+                    <!-- 主体内容 -->
+                    <div class="main-content">
+                        <!-- 面包屑 -->
+                        <ol class="breadcrumb">
+                            <li><a href="user_management_user_list.html">用户管理</a></li>
+                            <li><a href="user_management_role_list.html">角色列表</a></li>
+                            <li class="active">编辑</li>
+                        </ol>
+                        <!-- <div class="user-manager-btn-group">
+                            <a href="user_management_role_add.html"><button class="btn btn-sm btn-primary">添加角色</button></a>
+                        </div> -->
+                        <!-- 表格 -->
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-1 control-label">名称</label>
+                                <div class="col-sm-3">
+                                    <input type="email" class="form-control" id="inputEmail3" placeholder="请输入名称">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-1 control-label">权限</label>
+                                <div class="col-sm-11">
+                                    <div class="panel-group" id="accordion">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading backColor-blue"  data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                                <h4 class="panel-title"><span class="glyphicon glyphicon-user"></span> 用户管理权限</h4>
+                                            </div>
+                                            <div id="collapseOne" class="panel-collapse collapse in">
+                                                <div class="panel-body">
+                                                    <div class="form-group">
+
+                                                        <div class="check_box col-sm-offset-1">
+                                                            <label for="select_One" class="col-sm-1 control-label"><input type="checkbox" id="select_One" onclick="checkAll('One')"> 全选</label>
+                                                        </div>
+
+                                                        <div class="jurisdiction-group col-sm-offset-1" id="select_group_One">
+                                                            <label for="jurisdiction1" class="col-sm-1 control-label"><input type="checkbox" id="jurisdiction1"> 权限1</label>
+                                                            <label for="jurisdiction2" class="col-sm-1 control-label"><input type="checkbox" id="jurisdiction2"> 权限2</label>
+                                                            <label for="jurisdiction3" class="col-sm-1 control-label"><input type="checkbox" id="jurisdiction3"> 权限3</label>
+                                                            <label for="jurisdiction4" class="col-sm-1 control-label"><input type="checkbox" id="jurisdiction4"> 权限4</label>
+                                                            <label for="jurisdiction5" class="col-sm-1 control-label"><input type="checkbox" id="jurisdiction5"> 权限5</label>
+                                                            <label for="jurisdiction6" class="col-sm-1 control-label"><input type="checkbox" id="jurisdiction6"> 权限6</label>
+                                                            <label for="jurisdiction7" class="col-sm-1 control-label"><input type="checkbox" id="jurisdiction7"> 权限7</label>
+                                                            <label for="jurisdiction8" class="col-sm-1 control-label"><input type="checkbox" id="jurisdiction8"> 权限8</label>
+                                                            <label for="jurisdiction9" class="col-sm-1 control-label"><input type="checkbox" id="jurisdiction9"> 权限9</label>
+                                                            <label for="jurisdiction10" class="col-sm-1 control-label"><input type="checkbox" id="jurisdiction10"> 权限10</label>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading backColor-blue"  data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                                <h4 class="panel-title"><span class="glyphicon glyphicon-shopping-cart"></span> 店铺管理权限</h4>
+                                            </div>
+                                            <div id="collapseTwo" class="panel-collapse collapse ">
+                                                <div class="panel-body">
+                                                    <div class="form-group">
+                                                        
+                                                        <div class="check_box col-sm-offset-1">
+                                                            <label for="select_Two" class="col-sm-1 control-label"><input type="checkbox" id="select_Two" onclick="checkAll('Two')"> 全选</label>
+                                                        </div>
+                                                        
+                                                        <div class="jurisdiction-group col-sm-offset-1" id="select_group_Two">
+                                                            <label for="jurisdiction1" class="col-sm-1 control-label"><input type="checkbox" id="jurisdiction1"> 权限1</label>
+                                                            <label for="jurisdiction2" class="col-sm-1 control-label"><input type="checkbox" id="jurisdiction2"> 权限2</label>
+                                                            <label for="jurisdiction3" class="col-sm-1 control-label"><input type="checkbox" id="jurisdiction3"> 权限3</label>
+                                                            <label for="jurisdiction4" class="col-sm-1 control-label"><input type="checkbox" id="jurisdiction4"> 权限4</label>
+                                                            <label for="jurisdiction5" class="col-sm-1 control-label"><input type="checkbox" id="jurisdiction5"> 权限5</label>
+                                                            <label for="jurisdiction6" class="col-sm-1 control-label"><input type="checkbox" id="jurisdiction6"> 权限6</label>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading backColor-blue"  data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                                                <h4 class="panel-title"><span class="glyphicon glyphicon-list-alt"></span> 订单管理权限</h4>
+                                            </div>
+                                            <div id="collapseThree" class="panel-collapse collapse ">
+                                                <div class="panel-body">
+                                                    <div class="form-group">
+
+                                                        <div class="check_box col-sm-offset-1">
+                                                            <label for="select_Three" class="col-sm-1 control-label"><input type="checkbox" id="select_Three" onclick="checkAll('Three')"> 全选</label>
+                                                        </div>
+                                                        
+                                                        <div class="jurisdiction-group col-sm-offset-1" id="select_group_Three">
+                                                            <label for="jurisdiction1" class="col-sm-1 control-label"><input type="checkbox" id="jurisdiction1"> 权限1</label>
+                                                            <label for="jurisdiction2" class="col-sm-1 control-label"><input type="checkbox" id="jurisdiction2"> 权限2</label>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading backColor-blue"  data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+                                                <h4 class="panel-title"><span class="glyphicon glyphicon-cog"></span> 系统管理权限</h4>
+                                            </div>
+                                            <div id="collapseFour" class="panel-collapse collapse ">
+                                                <div class="panel-body">
+                                                    <div class="form-group">
+                                                        
+                                                        <div class="check_box col-sm-offset-1">
+                                                            <label for="select_Four" class="col-sm-1 control-label"><input type="checkbox" id="select_Four" onclick="checkAll('Four')"> 全选</label>
+                                                        </div>
+                                                        
+                                                        <div class="jurisdiction-group col-sm-offset-1" id="select_group_Four">
+                                                            <label for="jurisdiction1" class="col-sm-1 control-label"><input type="checkbox" id="jurisdiction1"> 权限1</label>
+                                                            <label for="jurisdiction2" class="col-sm-1 control-label"><input type="checkbox" id="jurisdiction2"> 权限2</label>
+                                                            <label for="jurisdiction3" class="col-sm-1 control-label"><input type="checkbox" id="jurisdiction3"> 权限3</label>
+                                                            <label for="jurisdiction4" class="col-sm-1 control-label"><input type="checkbox" id="jurisdiction4"> 权限4</label>
+                                                            <label for="jurisdiction5" class="col-sm-1 control-label"><input type="checkbox" id="jurisdiction5"> 权限5</label>
+                                                            <label for="jurisdiction6" class="col-sm-1 control-label"><input type="checkbox" id="jurisdiction6"> 权限6</label>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div>
+                                    <label for="inputPassword3" class="col-sm-1 control-label"></label>
+                                    <div class="col-sm-3">
+                                        <button type="button" class="btn btn-primary backColor-blue">提交</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    
+                </div>
+            </div>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="lib/jquery/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+        <script src="js/tools.js"></script>
+        <script src="js/main.js"></script>
+
+        <script>
+            function checkAll(id){
+                if ( $('#select_' + id).prop("checked") ) {
+                    console.log(1)
+                    $('#select_group_' + id + ' input').prop("checked",true)
+                }else{
+                    console.log(2)
+                    $('#select_group_' + id + ' input').prop("checked",false)
+                }
+            }
+        </script>
+
+    </body>
+</html>

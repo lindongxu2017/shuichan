@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+        <title>水产交易平台</title>
+
+        <!-- Bootstrap -->
+        <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/main_public.css" rel="stylesheet">
+        <link href="css/main_reset.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+        <link  href="css/layout.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <style>
+            a{
+                cursor: pointer;
+            }
+            @media (min-width: 768px){
+                .modal-dialog {
+                    width: 675px;
+                    margin: 7% auto;
+                }    
+            }
+            .modal-body p{
+                margin:10px 0 20px 0; 
+            }
+            .user-manager-btn-group{
+                text-align: left;
+                margin-bottom: 5px;
+            }
+            .user-manager-btn-group .form-control{
+                width: 130px;
+                margin-left: 10px;
+                display: inline-block;
+            }
+            .modal-backdrop {
+                opacity: 0 !important;
+                filter: alpha(opacity=0) !important;
+            }
+        </style>
+    </head>
+    <body>
+            <!-- 顶部导航 -->
+            <div class="top-nav">
+                <div class="top-nav-logo">LOGO</div>
+                <div class="top-nav-link">
+                    <ul class="nav nav-tabs">
+                        <li role="presentation"><a href="index.html">首页</a></li>
+                        <li role="presentation" class="active"><a href="user_management_user_list.html">用户管理</a></li>
+                        <li role="presentation"><a href="store_management_apply_list.html">店铺管理</a></li>
+                        <li role="presentation"><a href="order_management_order_list.html">订单管理</a></li>
+                        <li role="presentation"><a href="logistics_company.html">物流公司</a></li>
+                        <li role="presentation"><a href="system_management.html">系统管理</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            
+            <div class="row">
+                <!-- 侧栏导航 -->
+                <div class="col-md-1 left-nav">
+                    <ul class="left-nav-link">
+                        <a href="user_management_user_list.html"><li>用户列表</li></a>
+                        <a href="user_management_role_list.html"><li>角色列表</li></a>
+                        <a href="user_management_store_list.html"><li class="left-nav-active">商户列表</li></a>
+                        <a href="user_management_member_list.html"><li>会员列表</li></a>
+                        <a href="user_management_member_balance.html"><li>会员余额</li></a>
+                    </ul>
+                </div>
+                <div class="col-md-11 main-area">
+                    <!-- 主体内容 -->
+                    <div class="main-content">
+                        <!-- 面包屑 -->
+                        <ol class="breadcrumb">
+                            <li><a href="user_management_user_list.html">用户管理</a></li>
+                            <li class="active">商户列表</li>
+                        </ol>
+                        <div class="row user-manager-btn-group">
+                            <div class="col-sm-2">
+                                <div class="form-group">
+                                    <label for="exampleInputName2">店铺名称</label>
+                                    <input type="text" class="form-control" id="exampleInputName2" placeholder="请输入店铺名称">
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="form-group">
+                                    <label for="exampleInputName2">城市</label>
+                                    <input type="text" class="form-control" id="exampleInputName2" placeholder="请输入城市">
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="form-group">
+                                    <label for="exampleInputName2">类型</label>
+                                    <input type="text" class="form-control" id="exampleInputName2" placeholder="请输入类型">
+                                </div>
+                            </div>
+                            <div class="col-sm-1">
+                                <div class="form-group">
+                                    <button class="btn  btn-primary backColor-blue">查询</button>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <!-- 表格 -->
+                        <table class="table table-hover">
+                            <thead>
+                                <tr class="white" style="background:#003C7A">
+                                    <th class="border-width">序号</th>
+                                    <th>店铺名</th>
+                                    <th>所属城市</th>
+                                    <th>类型</th>
+                                    <th>入驻资料</th>
+                                    <th>会员名称</th>
+                                    <th>营业</th>
+                                    <th>佣金/结算额</th>
+                                    <th  class="width">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>某某海鲜</td>
+                                    <td>深圳</td>
+                                    <td>捕捞</td>
+                                    <td><a data-toggle="modal" data-target="#myModal">查看详情</a></td>
+                                    <td>谭某某</td>
+                                    <td>是</td>
+                                    <td>+300</td>
+                                    <td>
+                                        <a href=""><button class="btn btn-sm btn-primary backColor-blue" style="width:90px">进入商家后台</button></a>
+                                        <button class="btn btn-sm btn-danger">删除</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>某某海鲜</td>
+                                    <td>深圳</td>
+                                    <td>捕捞</td>
+                                    <td><a data-toggle="modal" data-target="#myModal">查看详情</a></td>
+                                    <td>谭某某</td>
+                                    <td>是</td>
+                                    <td>+300</td>
+                                    <td>
+                                        <a href=""><button class="btn btn-sm btn-primary backColor-blue" style="width:90px">进入商家后台</button></a>
+                                        <button class="btn btn-sm btn-danger">删除</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- 模态框 dialog-->
+                        <div class="modal fade " id="myModal" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                                        <h5 class="modal-title">入驻资料</h5>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-sm-12"><p>店铺名称：某某海鲜</p></div>
+                                            <div class="col-sm-12"><p>联系地址：深圳市龙岗区坂田街道</p></div>
+                                            <div class="col-sm-12"><p>联系电话：0755-888888</p></div>
+                                        </div>
+                                        <div class="row" style="border-top:1px solid #bbb;padding-top:10px;">
+                                            <div class="col-sm-6"><p>入驻单位：深圳市******有限公司</p></div>
+                                            <div class="col-sm-6"><p>处理状态：通过审核</p></div>
+                                            <div class="col-sm-6"><p>营业执照：有</p></div>
+                                            <div class="col-sm-6"><p>身份证：有</p></div>
+                                            <div class="col-sm-6"><p>食品流通证：有</p></div>
+                                            <div class="col-sm-6"><p>健康证：无</p></div>
+                                            <div class="col-sm-6"><p>其他说明：无</p></div>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div> -->
+                                </div><!-- /.modal-content -->
+                            </div><!-- /.modal-dialog -->
+                        </div><!-- /.modal -->
+                    </div>
+                    
+                </div>
+            </div>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="lib/jquery/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+        <script src="js/tools.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

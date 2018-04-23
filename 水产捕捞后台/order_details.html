@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>捕捞后台</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="stylesheet" href="lib/sui/sm.min.css">
+    <link rel="stylesheet" href="lib/sui/sm-extend.min.css">
+    <link rel="stylesheet" href="css/main_public.css">
+
+</head>
+<body>
+    <div class="page-group">
+        <div class="page page-current bg-white">
+            <!-- 这里是页面内容区 -->
+            <div class="content infinite-scroll bg-gray" style="padding-top:44px;">
+                <!-- 搜索栏 -->
+                <div class="bar bar-header-secondary">
+                    <div class="searchbar row">
+                        <div class="search-input col-80" style="width:85%;margin-left:0">
+                            <label class="icon icon-search" for="search"></label>
+                            <input type="search" id='search' placeholder='输入关键字...'/>
+                        </div>
+                        <a class="button button-fill button-primary col-15"
+                        style="margin-top:-6px;background:none;color:#0894ec;width:80px;width:15%;margin-left:0">搜索</a>
+                    </div>
+                </div>
+                <div class="order-goods">
+                    <p>商品名称：<span>朗姆酒</span></p>
+                    <p>当前有<span>3</span>个订单</p>
+                </div>
+                <div class="order-content bg-white mt-7" v-for="item in list">
+                    <p class="order-time">ED26594564134</p>
+                    <div class="list-block">
+                        <ul>
+                            <li class="item-content item-link">
+                                <div class="item-inner" @click="godetails(item.id)">
+                                    <div class="item-title">
+                                        <div class="right-dashed">
+                                            <p style="font-size:1rem;color:#0894ec;">100吨</p>
+                                            <p style="font-size:12px">购买数量</p>
+                                        </div>
+                                        <div>
+                                            <p style="font-size:1rem;">杰克斯派洛</p>
+                                            <p style="font-size:12px;color:gray">2017-09-14 14:00:00</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="order-edit">
+                        <a class="button button-fill send-order" @click="togglePopup(item.id)">发货</a>
+                    </div>
+                </div>
+                <!-- 弹出层 -->
+                <div class="popup popup-about">
+                    <div class="list-block">
+                        <ul>
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-media"><i class="icon icon-form-name"></i></div>
+                                    <div class="item-inner">
+                                        <div class="item-title label">物流公司</div>
+                                        <div class="item-input">
+                                            <select>
+                                                <option value="" style="display: none;" disabled selected>请选择商品属性</option>
+                                                <option>Male</option>
+                                                <option>Female</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-media"><i class="icon icon-form-email"></i></div>
+                                    <div class="item-inner">
+                                        <div class="item-title label">发货方式</div>
+                                        <div class="item-input">
+                                            <select>
+                                                <option value="" style="display: none;" disabled selected>请选择商品属性</option>
+                                                <option>Male</option>
+                                                <option>Female</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-media"><i class="icon icon-form-calendar"></i></div>
+                                    <div class="item-inner">
+                                        <div class="item-title label">预计达到时间</div>
+                                        <div class="item-input">
+                                            <input type="date" placeholder="选择预计到达时间">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="content-block">
+                        <button class="my-btn-lg" @click="send()">确认发货</button>
+                        <button class="my-btn-lg close-popup" style="margin-top: 15px;">取消</button>
+                    </div>
+                </div>
+                <!-- 加载提示符 -->
+                <div class="infinite-scroll-preloader" v-if="current_length < total">
+                    <div class="preloader"></div>
+                </div>
+                <div class="noMore" v-if="current_length >= total">没有更多了...</div>
+            </div>
+        </div>
+    </div>
+
+    <script type='text/javascript' src='lib/sui/zepto.min.js'></script>
+    <script type='text/javascript' src='lib/sui/sm.min.js'></script>
+    <script type='text/javascript' src='lib/sui/sm-extend.min.js'></script>
+    <script type="text/javascript" src="lib/vue/vue.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <script>
+        var vm = new Vue({
+            el: '.content',
+            data: {
+                list:['', '', '', ''],
+                itemID: '',
+                total: 8,
+                current_length: 0
+            },
+            mounted () {
+                this.loadMore();
+            },
+            methods: {
+                getData: function () {
+                    this.list.push('');
+                    this.current_length = this.list.length;
+                },
+
+                godetails: function (id) {
+                    window.location = 'order_details_details.html?id=' + id;
+                },
+                togglePopup: function (id) {
+                    $.popup('.popup-about');
+                    this.itemID = id;
+                },
+                send: function () {
+                    // 传参 this.itemID
+                    // ajax成功之后 关闭弹出层
+                    $.closeModal('.popup-about');
+                },
+                loadMore: function() {
+                    var self = this;
+                    var loading = false;
+                    $(document).on('infinite', function() {
+                        if (loading) return;
+                        loading = true;
+                        setTimeout(function() {
+                            loading = false;
+                            if (self.current_length >= self.total) {
+                                return false;
+                            }
+                            // ajax获取数据
+                            self.getData();
+                            $.refreshScroller();
+                        }, 500);
+                    });
+                }
+            }
+        })
+        $.init();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>捕捞后台</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="stylesheet" href="lib/sui/sm.min.css">
+    <link rel="stylesheet" href="lib/sui/sm-extend.min.css">
+    <link rel="stylesheet" href="css/main_public.css">
+
+</head>
+<body>
+    <div class="page-group">
+        <div class="page page-current bg-white">
+            <!-- 这里是页面内容区 -->
+            <div class="content bg-gray bank-card">
+                <div class="list-block">
+                    <ul>
+                        <li class="item-content">
+                            <div class="item-inner padding-mt-15">
+                                <div class="item-title">
+                                    <p style="margin:5px 0">中国平安银行</p>
+                                    <p style="margin:5px 0;color:gray">6222 2545 2545 2658 6645 357</p>
+                                </div>
+                                <div class="item-after">
+                                    <label class="check-label" @click="live()">
+                                        <input type="radio" name="bankcard" checked> <!-- checked默认选中 -->
+                                        <img src="images/icon/check.png" width="25">
+                                    </label>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="list-block">
+                    <ul>
+                        <li class="item-content">
+                            <div class="item-inner padding-mt-15">
+                                <div class="item-title">
+                                    <p style="margin:5px 0">中国平安银行</p>
+                                    <p style="margin:5px 0;color:gray">6222 2545 2545 2658 6645 357</p>
+                                </div>
+                                <div class="item-after">
+                                    <label class="check-label" @click="live()">
+                                        <input type="radio" name="bankcard">
+                                        <img src="images/icon/check.png" width="25">
+                                    </label>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <a href="bank_add.html">
+                    <div class="addCard">
+                        <img src="images/icon/plus.png" width="16">
+                        <span>添加银行卡</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script type='text/javascript' src='lib/sui/zepto.min.js'></script>
+    <script type='text/javascript' src='lib/sui/sm.min.js'></script>
+    <script type='text/javascript' src='lib/sui/sm-extend.min.js'></script>
+    <script type="text/javascript" src="lib/vue/vue.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <script>
+        var vm = new Vue({
+            el:'.content',
+            methods: {
+                live: function (event) {
+                    alert(1)
+                }
+            }
+        })
+    </script>
+
+</body>
+</html>

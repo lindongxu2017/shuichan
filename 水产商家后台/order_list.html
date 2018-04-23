@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+        <title>水产交易平台</title>
+
+        <!-- Bootstrap -->
+        <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/main_public.css" rel="stylesheet">
+        <link href="css/main_reset.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+        <link  href="css/layout.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <style>
+            .order-num > div{
+                color: #fff;
+                width: 170px;
+                height: 70px;
+                margin-right: 30px;
+                line-height: 70px;
+                text-align: center;
+            }
+            .search{
+                padding: 30px 0; 
+            }
+            .color-daifa{
+                color: #3E8ECD;
+            }
+            .color-yifa{
+                color: #1DC796;
+            }
+            .color-chengjiao{
+                color: #CA4B7E;
+            }
+            .color-tuikuan{
+                color: #E0A116;
+            }
+            .border-b-0{
+                border-bottom: 0!important;
+            }
+
+            .width-200{
+                width: 200px;
+            }
+            .text-align-l > tr > td,.text-align-l > tr > th{
+                text-align: left;
+            }
+            .padding-left-0{
+                padding-left: 0;
+            }
+            .second tr>th{
+                font-weight: 500;
+            }
+            .order{
+                padding-left: 30px!important;
+            }
+            .table{
+                margin-bottom: 0;
+                padding-bottom: 0;
+            }
+        </style>
+    </head>
+    <body>
+            <!-- 顶部导航 -->
+            <div class="top-nav">
+                <div class="row" style="width:100%">
+                    <div class="col-md-1" style="padding:0">
+                        <div class="top-nav-logo">LOGO</div>
+                    </div>
+                    <div class="col-md-11" style="padding:0">
+                        <div class="top-title">商家管理后台</div>
+                        <div class="row top-nav-link">
+                            <ul class="nav nav-tabs">
+                                <li role="presentation" class="active"><a href="order_list.html">我的订单</a></li>
+                                <li role="presentation"><a href="my_goods.html">我的商品</a></li>
+                                <li role="presentation"><a href="marketing.html">营销功能</a></li>
+                                <li role="presentation"><a href="my_account.html">我的账户</a></li>
+                                <li role="presentation"><a href="store_set.html">店铺设置</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+
+            
+            <div class="row">
+                <!-- 侧栏导航 -->
+                <div class="col-md-1 left-nav">
+                    <ul class="left-nav-link">
+                        <a href="order_list.html"><li class="left-nav-active">订单列表</li></a>
+                    </ul>
+                </div>
+                <div class="col-md-11 main-area">
+                    <!-- 主体内容 -->
+                    <div class="main-content">
+                        <!-- 面包屑 -->
+                        <ol class="breadcrumb">
+                            <li><a href="order_list.html">我的订单</a></li>
+                            <li class="active">订单列表</li>
+                        </ol>
+                        <div class="row order-num">
+                            <div class="col-md-2" style="background:#3E8ECD">待发订单：300 件</div>
+                            <div class="col-md-2" style="background:#1DC796">已发订单：300 件</div>
+                            <div class="col-md-2" style="background:#CA4B7E">成交订单：300 件</div>
+                            <div class="col-md-2" style="background:#E0A116">退款订单：0 件</div>
+                        </div>
+                        <div class="row search">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>订单编号</label><input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label>状态</label>
+                                    <select class="form-control">
+                                        <option value="1">待发货</option>
+                                        <option value="2">已发货</option>
+                                        <option value="3">已成交</option>
+                                        <option value="4">申请退款</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <button class="btn  btn-custom">搜索</button>
+                            </div>
+                            <div class="col-md-6" style="text-align:right">
+                                <button class="btn btn-custom">导出Excel表格</button>
+                            </div>
+                        </div>
+                        <!-- 一级表格 -->
+                        <table class="table table-hover">
+                            <thead>
+                                <tr class="white" style="background: #38B3B4;">
+                                    <th class="border-width">序号</th>
+                                    <th>订单号</th>
+                                    <th>时间</th>
+                                    <th>总价</th>
+                                    <th>状态</th>
+                                    <th class="width">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>SCD123154145</td>
+                                    <td>2017-07-01 19:40:00</td>
+                                    <td>￥100</td>
+                                    <td class="color-daifa">待发货</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-custom">查看</button>
+                                    </td>
+                                </tr>
+                                <tr class="second" isshow="false">
+                                    <td colspan="6" style="background:#F2F4F5" class="border-b-0">
+                                        <!-- 二级表格 -->
+                                        <table class="table" style="background:#F2F4F5">
+                                            <tbody class="text-align-l">
+                                                <tr>
+                                                    <td colspan="4">
+                                                        在线支付
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4">
+                                                        <div class="row">
+                                                            <div class="col-md-2 padding-left-0">联系人：谭某某</div>
+                                                            <div class="col-md-2 padding-left-0">顾客电话：13688888888</div>
+                                                            <div class="col-md-3 padding-left-0">顾客地址：深圳市龙岗区坂田街道</div>
+                                                            <div class="col-md-2 padding-left-0">
+                                                                <span style="color:#333">物流公司：</span>
+                                                                <select class="form-control">
+                                                                    <option value="1">顺丰快递</option>
+                                                                    <option value="2">圆通快递</option>
+                                                                    <option value="3">申通快递</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-md-12 padding-left-0">备注：无</div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="width-200 order">序号</th>
+                                                    <th class="width-200">名称</th>
+                                                    <th class="width-200">单价</th>
+                                                    <th>数量</th>
+                                                </tr>
+                                                <!-- 二级循环数据 ↓-->
+                                                <tr>
+                                                    <td class="order">01</td>
+                                                    <td>章鱼</td>
+                                                    <td>10.00</td>
+                                                    <td>1100</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="order">02</td>
+                                                    <td>扇贝</td>
+                                                    <td>22.00</td>
+                                                    <td>1100</td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4" class="fahuo border-b-0" style="text-align:center">
+                                                        <button class="btn btn-custom">发货</button>
+                                                    </td> 
+                                                    <td colspan="4" class="tuikuan border-b-0" style="text-align:center;display:none">
+                                                        <button class="btn btn-custom">拒绝</button>
+                                                        <button class="btn btn-custom">同意</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>    
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>2</td>
+                                    <td>SCD123154145</td>
+                                    <td>2017-07-01 19:40:00</td>
+                                    <td>￥100</td>
+                                    <td class="color-yifa">已发货</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-custom">查看</button>
+                                    </td>
+                                </tr>
+                                <tr class="second" isshow="false">
+                                    <td colspan="6" style="background:#F2F4F5" class="border-b-0">
+                                        <!-- 二级表格 -->
+                                        <table class="table" style="background:#F2F4F5">
+                                            <tbody class="text-align-l">
+                                                <tr>
+                                                    <td colspan="4">
+                                                        在线支付
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4">
+                                                        <div class="row">
+                                                            <div class="col-md-2 padding-left-0">联系人：谭某某</div>
+                                                            <div class="col-md-2 padding-left-0">顾客电话：13688888888</div>
+                                                            <div class="col-md-3 padding-left-0">顾客地址：深圳市龙岗区坂田街道</div>
+                                                            <div class="col-md-2 padding-left-0">
+                                                                <span style="color:#333">物流公司：</span>
+                                                                <!-- <select class="form-control">
+                                                                    <option value="1">顺丰快递</option>
+                                                                    <option value="2">圆通快递</option>
+                                                                    <option value="3">申通快递</option>
+                                                                </select> -->
+                                                                <span>圆通快递</span>
+                                                            </div>
+                                                            <div class="col-md-12 padding-left-0">备注：无</div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="width-200 order">序号</th>
+                                                    <th class="width-200">名称</th>
+                                                    <th class="width-200">单价</th>
+                                                    <th>数量</th>
+                                                </tr>
+                                                <!-- 二级循环数据 ↓ -->
+                                                <tr>
+                                                    <td class="order">01</td>
+                                                    <td>章鱼</td>
+                                                    <td>10.00</td>
+                                                    <td>1100</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="order">02</td>
+                                                    <td>扇贝</td>
+                                                    <td>22.00</td>
+                                                    <td>1100</td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4" class="fahuo border-b-0" style="text-align:center;display:none">
+                                                        <button class="btn btn-custom">发货</button>
+                                                    </td> 
+                                                    <td colspan="4" class="tuikuan border-b-0" style="text-align:center;display:none">
+                                                        <button class="btn btn-custom">拒绝</button>
+                                                        <button class="btn btn-custom">同意</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>    
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>3</td>
+                                    <td>SCD123154145</td>
+                                    <td>2017-07-01 19:40:00</td>
+                                    <td>￥100</td>
+                                    <td class="color-chengjiao">已成交</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-custom">查看</button>
+                                    </td>
+                                </tr>
+                                <tr class="second" isshow="false">
+                                    <td colspan="6" style="background:#F2F4F5" class="border-b-0">
+                                        <!-- 二级表格 -->
+                                        <table class="table" style="background:#F2F4F5">
+                                            <tbody class="text-align-l">
+                                                <tr>
+                                                    <td colspan="4">
+                                                        在线支付
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4">
+                                                        <div class="row">
+                                                            <div class="col-md-2 padding-left-0">联系人：谭某某</div>
+                                                            <div class="col-md-2 padding-left-0">顾客电话：13688888888</div>
+                                                            <div class="col-md-3 padding-left-0">顾客地址：深圳市龙岗区坂田街道</div>
+                                                            <div class="col-md-2 padding-left-0">
+                                                                <span style="color:#333">物流公司：</span>
+                                                                <!-- <select class="form-control">
+                                                                    <option value="1">顺丰快递</option>
+                                                                    <option value="2">圆通快递</option>
+                                                                    <option value="3">申通快递</option>
+                                                                </select> -->
+                                                                <span>圆通快递</span>
+                                                            </div>
+                                                            <div class="col-md-12 padding-left-0">备注：无</div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="width-200 order">序号</th>
+                                                    <th class="width-200">名称</th>
+                                                    <th class="width-200">单价</th>
+                                                    <th>数量</th>
+                                                </tr>
+                                                <!-- 二级循环数据 ↓ -->
+                                                <tr>
+                                                    <td class="order">01</td>
+                                                    <td>章鱼</td>
+                                                    <td>10.00</td>
+                                                    <td>1100</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="order">02</td>
+                                                    <td>扇贝</td>
+                                                    <td>22.00</td>
+                                                    <td>1100</td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4" class="fahuo border-b-0" style="text-align:center;display:none">
+                                                        <button class="btn btn-custom">发货</button>
+                                                    </td> 
+                                                    <td colspan="4" class="tuikuan border-b-0" style="text-align:center;display:none">
+                                                        <button class="btn btn-custom">拒绝</button>
+                                                        <button class="btn btn-custom">同意</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>    
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>4</td>
+                                    <td>SCD123154145</td>
+                                    <td>2017-07-01 19:40:00</td>
+                                    <td>￥100</td>
+                                    <td class="color-tuikuan">申请退款</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-custom">查看</button>
+                                    </td>
+                                </tr>
+                                <tr class="second" isshow="false">
+                                    <td colspan="6" style="background:#F2F4F5" class="border-b-0">
+                                        <!-- 二级表格 -->
+                                        <table class="table" style="background:#F2F4F5">
+                                            <tbody class="text-align-l">
+                                                <tr>
+                                                    <td colspan="4">
+                                                        在线支付
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4">
+                                                        <div class="row">
+                                                            <div class="col-md-2 padding-left-0">联系人：谭某某</div>
+                                                            <div class="col-md-2 padding-left-0">顾客电话：13688888888</div>
+                                                            <div class="col-md-3 padding-left-0">顾客地址：深圳市龙岗区坂田街道</div>
+                                                            <div class="col-md-2 padding-left-0">
+                                                                <span style="color:#333">物流公司：</span>
+                                                                <!-- <select class="form-control">
+                                                                    <option value="1">顺丰快递</option>
+                                                                    <option value="2">圆通快递</option>
+                                                                    <option value="3">申通快递</option>
+                                                                </select> -->
+                                                                <span>圆通快递</span>
+                                                            </div>
+                                                            <div class="col-md-12 padding-left-0">备注：无</div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="width-200 order">序号</th>
+                                                    <th class="width-200">名称</th>
+                                                    <th class="width-200">单价</th>
+                                                    <th>数量</th>
+                                                </tr>
+                                                <!-- 二级循环数据 ↓ -->
+                                                <tr>
+                                                    <td class="order">01</td>
+                                                    <td>章鱼</td>
+                                                    <td>10.00</td>
+                                                    <td>1100</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="order">02</td>
+                                                    <td>扇贝</td>
+                                                    <td>22.00</td>
+                                                    <td>1100</td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4" class="fahuo border-b-0" style="text-align:center;display:none">
+                                                        <button class="btn btn-custom">发货</button>
+                                                    </td> 
+                                                    <td colspan="4" class="tuikuan border-b-0" style="text-align:center">
+                                                        <button class="btn btn-custom">拒绝</button>
+                                                        <button class="btn btn-custom">同意</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>    
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                </div>
+            </div>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="lib/jquery/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+        <script src="js/tools.js"></script>
+        <script src="js/main.js"></script>
+
+        <script>
+
+            $('.second').hide();
+            $('.btn-custom').click(function(){
+                $('.second').hide();
+
+                var obj = $(this).parents('tbody').find('tr[class="second"]');
+
+                if(obj.attr('isshow') == 'false'){
+                    $('.second').attr('isshow','false')
+                    obj.attr('isshow','true')
+                    obj.show();
+                }else{
+                    obj.attr('isshow','false')
+                    obj.hide();
+                }
+                
+            })
+
+        </script>
+
+    </body>
+</html>

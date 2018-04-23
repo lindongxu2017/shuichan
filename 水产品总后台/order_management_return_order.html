@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+        <title>水产交易平台</title>
+
+        <!-- Bootstrap -->
+        <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/main_public.css" rel="stylesheet">
+        <link href="css/main_reset.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+        <link  href="css/layout.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <style>
+            a{
+                cursor: pointer;
+            }
+            .user-manager-btn-group{
+                text-align: left;
+                margin-bottom: 5px;
+            }
+            .user-manager-btn-group .form-control{
+                width: 170px;
+                margin-left: 10px;
+                display: inline-block;
+            }
+        </style>
+    </head>
+    <body>
+            <!-- 顶部导航 -->
+            <div class="top-nav">
+                <div class="top-nav-logo">LOGO</div>
+                <div class="top-nav-link">
+                    <ul class="nav nav-tabs">
+                        <li role="presentation"><a href="index.html">首页</a></li>
+                        <li role="presentation"><a href="user_management_user_list.html">用户管理</a></li>
+                        <li role="presentation"><a href="store_management_apply_list.html">店铺管理</a></li>
+                        <li role="presentation" class="active"><a href="order_management_order_list.html">订单管理</a></li>
+                        <li role="presentation"><a href="logistics_company.html">物流公司</a></li>
+                        <li role="presentation"><a href="system_management.html">系统管理</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            
+            <div class="row">
+                <!-- 侧栏导航 -->
+                <div class="col-md-1 left-nav">
+                    <ul class="left-nav-link">
+                        <a href="order_management_order_list.html"><li>订单列表</li></a>
+                        <a href="order_management_settlement_process.html"><li>结算处理</li></a>
+                        <a href="order_management_cash_record.html"><li>提现记录</li></a>
+                        <a href="order_management_return_order.html"><li class="left-nav-active">退货订单</li></a>
+                        <a href="order_management_return_reason.html"><li>退货原因</li></a>
+                    </ul>
+                </div>
+                <div class="col-md-11 main-area">
+                    <!-- 主体内容 -->
+                    <div class="main-content">
+                        <!-- 面包屑 -->
+                        <ol class="breadcrumb">
+                            <li><a href="order_management_order_list.html">订单管理</a></li>
+                            <li class="active">退货订单</li>
+                        </ol>
+                        <div class="row user-manager-btn-group">
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label >订单编号</label>
+                                    <input type="text" class="form-control" placeholder="请输入订单编号">
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label >退款状态</label>
+                                    <!-- <input type="text" class="form-control" placeholder="请输入城市"> -->
+                                    <select class="form-control">
+                                        <option value="1">成功</option>
+                                        <option value="2">失败</option>
+                                        <option value="3">商家确认中</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- <div class="col-sm-2">
+                                <div class="form-group">
+                                    <label >类型</label>
+                                    <input type="text" class="form-control" placeholder="请输入类型">
+                                </div>
+                            </div> -->
+                            <div class="col-sm-1">
+                                <div class="form-group">
+                                    <button class="btn  btn-primary backColor-blue">查询</button>
+                                </div>
+                            </div>
+
+                            <!-- <div class="col-sm-5">
+                                <div class="form-group" style="text-align:right">
+                                    <button class="btn  btn-primary backColor-blue">立即结算</button>
+                                    <button class="btn  btn-primary backColor-blue">导出表格</button>
+                                </div>
+                            </div> -->
+                        </div>
+                        <!-- 表格 -->
+                        <table class="table table-hover">
+                            <thead>
+                                <tr class="white" style="background:#003C7A">
+                                    <th class="border-width">序号</th>
+                                    <th>订单编号</th>
+                                    <th>会员名称</th>
+                                    <th>金额</th>
+                                    <th>原因</th>
+                                    <th>详细说明</th>
+                                    <th>状态</th>
+                                    <th class="width">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>SDS123456789</td>
+                                    <td>谭某某</td>
+                                    <td>666</td>
+                                    <td>订单错误</td>
+                                    <td>订单错误</td>
+                                    <td>商家确认中···</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary backColor-blue">通过</button>
+                                        <button class="btn btn-sm btn-danger">不通过</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>SDS123456789</td>
+                                    <td>谭某某</td>
+                                    <td>666</td>
+                                    <td>订单错误</td>
+                                    <td>订单错误</td>
+                                    <td class="green">成功</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary backColor-blue">通过</button>
+                                        <button class="btn btn-sm btn-danger">不通过</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>SDS123456789</td>
+                                    <td>谭某某</td>
+                                    <td>666</td>
+                                    <td>订单错误</td>
+                                    <td>订单错误</td>
+                                    <td class="red">失败</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary backColor-blue">通过</button>
+                                        <button class="btn btn-sm btn-danger">不通过</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                </div>
+            </div>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="lib/jquery/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+        <script src="js/tools.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html> 

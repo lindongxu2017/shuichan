@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>水产</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- <link rel="shortcut icon" href="/favicon.ico"> -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="stylesheet" href="lib/sui/sm.min.css">
+    <link rel="stylesheet" href="lib/sui/sm-extend.min.css">
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+        .content{
+            background: #FAFAFA;
+            font-size: .7rem;
+            padding-bottom: 70px;
+        }
+        .swiper-container{
+            padding-bottom: 30px;
+            background: #fff;
+        }
+        .swiper-container .swiper-wrapper .swiper-slide img{
+            width: 100%;
+            height: 160px;
+        }
+        .swiper-container-horizontal>.swiper-pagination{
+            bottom: 5px;
+        }
+        .swiper-pagination-bullet{
+            opacity: 1;
+            background: #BFD5EA;
+        }
+        .swiper-pagination-bullet-active{
+            opacity: 1;
+            background: #007aff;
+        }
+        .card{
+            margin: 0;
+            margin-top: 7px;
+            box-shadow:none;
+            padding: 0 15px;
+        }
+        .card p{
+            margin: 10px 0;
+        }
+        .card .card-header{
+            padding-left: 0;
+            font-size: .75rem;
+        }
+        .card .card-header:after{
+            background-color: #c8c8c8;  
+        }
+        .card .card-content-inner{
+            padding: .75rem 0;
+            padding-top: 0;
+        }
+        .card-header:after{
+            height: 0;
+        }
+        .card.info .card-content-inner{
+            padding-left: 40px;
+        }
+        .settlement{
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 44px;
+            color: #fff;
+            line-height: 44px;
+            text-align: center; 
+            z-index: 9999;
+        }
+        .settlement .shop-car{
+            width: 67%;
+            height: inherit;
+            float: left;
+            background: #0760B3;
+            position: relative;
+            font-size: 22px;
+        }
+        .settlement .shop-car p{
+            margin: 0;
+        }
+        .settlement .shop-car .car{
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 80px;
+            background: #fff;
+            left: 20px;
+            top: -20px;
+        }
+        .settlement .shop-car .count{
+            display: block;
+            width: 15px;
+            height: 15px;
+            background: red;
+            color: #fff;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 15px;
+            font-size: 12px;
+            position: absolute;
+            top: -5px;
+            left: 55px;
+        }
+        .settlement .shop-car .car img{
+            width: 30px;
+        }
+        .settlement .settlement-btn{
+            width: 100%;
+            height: inherit;
+            background: #f00;
+            float: left;
+            font-size: .8rem;
+        }
+        .desc{
+            padding-bottom: 10px;
+        }
+        .desc .card-header{
+            padding-bottom: 0;
+        }
+        .desc .card-header p{
+            text-indent: 15px;
+            margin-bottom: 0;
+            word-break:break-all;
+            display:-webkit-box;
+            -webkit-line-clamp:3;
+            -webkit-box-orient:vertical;
+            overflow:hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-group">
+        <div class="page page-current">
+            <!-- 内容区 -->
+            <div class="content">
+                <!-- Slider -->
+                <div class="swiper-container" data-space-between='10'>
+                    <div class="swiper-wrapper">
+                       <!--  <div class="swiper-slide"><img src="images/food_banner.jpg"></div>
+                       <div class="swiper-slide"><img src="images/food_banner.jpg"></div>
+                       <div class="swiper-slide"><img src="images/food_banner.jpg"></div> -->
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="card">
+                    <div class="card-header blue">梦尝客 进口越南黑虎虾 海鲜大虾 1千克10只 海鲜水产</div>
+                    <div class="card-content">
+                        <div class="card-content-inner">
+                            <p class="red">￥168.00元</p>
+                            <div class="row">
+                                <div class="col-50">库存：<strong>100</strong>吨</div>
+                                <div class="col-50 text-align-r">已售：<strong>80</strong>吨</div>
+                            </div>
+                            <p>最小购买数量：<strong>10吨</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card desc">
+                    <div class="card-header">
+                        <p>生长于含有丰富资源和洁净的海域中，使得壳薄肉厚，营养丰富。自然海域的孕育之下，才养成如此美味的黑虎虾，捕捞之后采用急速船冻技术保鲜，使得食材新鲜至极，包装之后使用快速的物流服务将美味运往全国各地。</p>
+                    </div>
+                    <div class="card-content">
+                        <p class="gray text-align-c loadMore" onclick="loadMore()">查看更多</p>
+                    </div>
+                </div>
+
+                <div class="card info">
+                    <div class="card-header">基本信息：</div>
+                    <div class="card-content">
+                        <div class="card-content-inner">
+                            <p>分类：虾</p>
+                            <p>规格<strong>10-20kg(只)</strong></p>
+                            <p>原产地：中国南部海南省</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card info">
+                    <div class="card-header">发货地：</div>
+                    <div class="card-content">
+                        <div class="card-content-inner">
+                            <p>中国南部海南省</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 结算 -->
+                <div class="settlement">
+                    <!-- <div class="shop-car">
+                        <p>￥666</p>
+                        <div class="car"><img src="images/car.png"></div>
+                        <span class="count">3</span>
+                    </div> -->
+                    <div class="settlement-btn" onclick="go_details()">立即购买</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script type='text/javascript' src='lib/sui/zepto.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='lib/sui/sm.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='lib/sui/sm-extend.min.js' charset='utf-8'></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script>
+
+        var toggle = false;
+        function go_details(){
+            location.href = 'buy.html';
+        }
+
+        function loadMore(){
+            
+            toggle = !toggle;
+            if (toggle) {
+                $('.desc .card-header p').css({
+                    '-webkit-line-clamp': '9999'
+                })
+                $('.loadMore').html('收起');
+            }else{
+                $('.desc .card-header p').css({
+                    '-webkit-line-clamp': '3'
+                })
+                $('.loadMore').html('查看更多');
+            }
+        }
+
+        
+        for (var i = 0; i < 3; i++) {
+            document.getElementsByClassName('swiper-wrapper')[0].innerHTML+='<div class="swiper-slide"><img src="images/food_banner.jpg"></div>'
+        };
+    
+
+        $.init()
+    </script>
+</body>
+</html>

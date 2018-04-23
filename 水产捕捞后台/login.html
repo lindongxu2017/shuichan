@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>登录</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="stylesheet" href="lib/sui/sm.min.css">
+    <link rel="stylesheet" href="lib/sui/sm-extend.min.css">
+    <link rel="stylesheet" href="css/main_public.css">
+
+</head>
+<body>
+    <div class="page-group">
+        <div class="page page-current bg-white">
+            <div class="content">
+                <div class="list-block" style="margin-top: 1.75rem">
+                    <ul>
+                        <!-- Text inputs -->
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-name"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">用户名</div>
+                                    <div class="item-input">
+                                        <input type="text" placeholder="请输入用户名">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-password"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">密码</div>
+                                    <div class="item-input">
+                                        <input type="password" placeholder="请输入密码" class="">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-email"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">验证码</div>
+                                    <div class="item-input">
+                                        <input type="text" placeholder="请输入验证码">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <p class="white-space default-size">
+                    <a href="register_step1.html"><span class="blue letf">注册账号</span></a>
+                    <a href="forget_password.html"><span class="red right">忘记密码？</span></a>
+                </p>
+                <div class="content-block center">
+                    <button class="my-btn-sm" onclick="goNext()">登录</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type='text/javascript' src='lib/sui/zepto.min.js'></script>
+    <script type='text/javascript' src='lib/sui/sm.min.js'></script>
+    <script type='text/javascript' src='lib/sui/sm-extend.min.js'></script>
+    <script type="text/javascript" src="lib/vue/vue.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <script>
+        function goNext () {
+            window.location = 'order_management.html'
+        }
+    </script>
+
+</body>
+</html>

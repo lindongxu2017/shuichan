@@ -1,0 +1,451 @@
+/**
+ * reset
+ */
+ul,li {
+    padding: 0;
+    margin: 0;
+}
+li {
+    list-style: none;
+}
+html,body {
+    width: 100%;
+    height: 100%;
+}
+body,.page, .page-group {
+    background-color: #f7f7f7;
+}
+/**
+ * SUI reset
+ */
+.list-block {
+    font-size: .75rem;
+    margin: 0;
+}
+.list-block .item-content {
+    padding-right: .75rem;
+}
+.list-block .item-inner.padding-mt-15 {
+    padding: .75rem 0;
+}
+.list-block .item-inner,
+.list-block .item-media+.item-inner{
+    margin-left: 0;
+    padding-right: 0;
+}
+.label-switch input[type=checkbox]:checked+.checkbox {
+    background-color: #0894ec;
+}
+.bar-header-secondary {
+    top: 0;
+}
+.bar .searchbar {
+    background-color: #fff;
+    padding-right: 0;
+}
+.bar .searchbar .search-input input {
+    background-color: #eee;
+    color: #333;
+}
+.icon-search:before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    position: absolute;
+    z-index: 99;
+    top: 2px;
+    left: 0;
+    background-image: url(../images/icon/search.png);
+    background-size: 16px 16px;
+}
+.popup-overlay.modal-overlay-visible {
+    visibility: hidden;
+}
+.login-screen, .popup {
+    position: fixed;
+}
+.list-block input[type=text],
+.list-block input[type=password],
+.list-block input[type=email],
+.list-block input[type=tel],
+.list-block input[type=url],
+.list-block input[type=date],
+.list-block input[type=datetime-local],
+.list-block input[type=time],
+.list-block input[type=number],
+.list-block input[type=search],
+.list-block select,
+.list-block textarea {
+    font-size: .75rem;
+}
+/**
+ * public
+ */
+.bg-white {
+	background-color: #fff;
+}
+.bg-gray {
+    background-color: #f7f7f7;
+}
+.red {
+	color: red
+}
+.gray {
+	color: gray
+}
+.blue {
+	color: #0894ec;
+}
+.default {
+	color: #5f646e;
+}
+.mt-7 {
+	margin-top: 7px;
+}
+.margin-0 {
+    margin: 0;
+}
+.padding-mt-15 {
+    padding: .75rem 0;
+}
+.text-right {
+	text-align: right;
+}
+.text-left {
+	text-align: left;
+}
+.center {
+	text-align: center;
+}
+.white-space {
+    padding: 0 0.75rem;
+}
+.default-size {
+    font-size: .75rem;
+}
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
+.no-wrap {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.noMore {
+    height: 36px;
+    margin: 10px;
+    text-align: center;
+    line-height: 36px;
+    font-size: 0.7rem;
+    color: gray;
+}
+.my-btn-lg {
+    width: 100%;
+    color: #fff;
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+    outline: none;
+    font-size: 14px;
+    list-style: none;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 3px;
+    text-decoration: none;
+    font-family: '微软雅黑';
+    background-color: #0894ec;
+}
+.my-btn-sm {
+    width: 30%;
+    color: #fff;
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+    outline: none;
+    font-size: 14px;
+    list-style: none;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 3px;
+    text-decoration: none;
+    font-family: '微软雅黑';
+    background-color: #0894ec; 
+}
+/**
+ * register
+ */
+.step-title {
+    padding: 30px 0;
+    color: #0894ec;
+    text-align: center;
+}
+.radio-label {
+    margin: 5px;
+}
+/**
+ * center
+ */
+.my-header {
+    height: 100px;
+    background-color: #58B7FF;
+}
+.headIMG {
+    width: 70px;
+    margin: 15px 15px 0px;
+    border-radius: 50%;
+    vertical-align: bottom;
+}
+.userName {
+    display: inline-block;
+    color: #fff;
+    vertical-align: bottom;
+    max-width: 210px;
+}
+/**
+ * center/bank_card
+ */
+.bank-card > div {
+    margin-top: 7px;
+}
+.bank-card > div:first-child {
+    margin-top: 0;
+}
+.check-label {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+.check-label input[type="radio"] {
+    display: none;
+}
+.check-label img {
+    opacity: 0;
+    margin-top: -2px;
+    margin-left: -2px;
+}
+.check-label input[type="radio"]:checked + img{
+    opacity: 1;
+}
+.addCard {
+    text-align: center;
+    color: #999;
+    border-top: 1px dashed #999;
+    border-bottom: 1px dashed #999;
+    padding: 10px 0;
+    margin-top: 0!important;
+    font-size: 12px;
+}
+.addCard img,
+.addCard span {
+    vertical-align: top;
+}
+/**
+ * shop_info
+ */
+.shop-info {
+    font-size: 0;
+}
+.shop-info li {
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+}
+.launch_pintuan.shop-info li{
+    border-bottom: 1px solid #eee;
+}
+.shop-info p{
+    margin: 0;
+    padding: 10px 10px 0;
+    color: #333;
+    font-size: 14px;
+}
+.shop-info img {
+    width: 100px;
+    margin: 0 10px 10px;
+}
+/**
+ * order-management
+ */
+.bar:after {
+    height: 0;
+}
+.tab-link-box {
+    font-size: 0;
+    text-align: center;
+    padding: 5px 0.45rem 10px;
+    border-bottom: 1px solid #e7e7e7;
+}
+.tab-link-box .button {
+    width: 25%;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 0;
+    border-right: 0;
+}
+.tab-link-box .button.active {
+    color: #fff;
+    background-color: #0894ec;
+}
+.tab-link-box .button:last-child {
+    border-right: 1px solid #0894ec;
+}
+.order-content {
+    border-top: 1px solid #0894ec;
+}
+.order-content p {
+    margin: 0;
+}
+.order-content .order-time {
+    padding: 7px 0.75rem;
+}
+.order-content .item-title > div {
+    display: inline-block;
+}
+.order-content .item-title > div:first-child {
+    min-width: 100px;
+    padding-right:0.75rem;
+    text-align: center;
+    margin-right: 10px;
+}
+.order-content .list-block .item-content {
+    padding-right: 0;
+}
+.order-content .list-block .item-inner {
+    padding: 1rem 0;
+}
+.order-content .right-dashed {
+    position: relative;
+}
+.order-content .right-dashed:after {
+    content: '';
+    position: absolute;
+    height: 35px;
+    width: 1px;
+    border-right: 1px solid #e7e7e7;
+    right: 5px;
+    top: 6px;
+}
+.order-content .order-info {
+    display: flex;
+    text-align: center;
+    font-size: 0.7rem;
+    padding: 5px 0;
+    border-bottom: 1px dashed #e7e7e7;
+}
+.order-content .order-info p {
+    height: 24px;
+    line-height: 24px;
+}
+.order-content .order-left,
+.order-content .order-right {
+    flex: 2;
+}
+.order-content .order-middle {
+    flex: 3;
+    border-left: 1px solid #e7e7e7;
+    border-right: 1px solid #e7e7e7;
+}
+.order-content .order-btn-xs {
+    border: 0;
+    color: #fff;
+    height: 24px;
+    font-size: 12px;
+    background: none;
+    background-color: red;
+}
+.order-content .order-edit {
+    padding: 7px 0;
+    text-align: center;
+    font-size: 0.7rem;
+    color: gray;
+}
+.button.button-fill.send-order {
+    width: auto;
+    height: 23px;
+    padding: 0 20px;
+    line-height: 24px;
+    display: inline-block;
+}
+.order-goods {
+    background: #fff;
+    padding: 10px 15px;
+    border-top: 1px solid #e7e7e7;
+}
+.order-goods p {
+    margin: 5px;
+}
+.order-goods p:last-child {
+    font-size: .7rem;
+    color: gray;
+}
+/**
+ *  cash_log
+ */
+.list-block.cash_log .item-inner {
+    padding-right: 0;
+    padding: 1rem 0;
+    background-position: 100% center;
+}
+.list-block.cash_log .item-title {
+    width: 100%;
+    font-size: 0;
+}
+.list-block.cash_log .item-title > div {
+    display: inline-block;
+    font-size: 0.7rem;
+}
+.list-block.cash_log .parting-line {
+    margin-right: 1.5rem;
+    position: relative;
+}
+.list-block.cash_log .parting-line:after {
+    content: '';
+    height: 39px;
+    top: 3px;
+    right: -0.75rem;
+    position: absolute;
+    border-right: 1px solid #e7e7e7;
+}
+.list-block.cash_log .item-title p {
+    margin: 0;
+}
+.list-block.cash_log ul:before {
+    height: 0;
+}
+/**
+ * income
+ */
+.income {
+    padding: 0 7px;
+}
+.income table {
+    width: 100%;
+    text-align: center;
+}
+.income table tr {
+    border-bottom: 1px solid #e7e7e7;
+}
+.income table tbody tr td {
+    width: 50%;
+}
+.income table tbody tr td:last-child{
+    background-image: url(../images/icon/link.png);
+    background-repeat: no-repeat;
+    background-position: 100% center;
+    background-size: 10%;
+} 
+.income table td {
+    padding: 15px 0;
+    font-size: 0.7rem;
+}
+.income thead td {
+    padding: 10px 0;
+}
+.popup-about .list-block .item-inner {
+    padding: 0;
+}

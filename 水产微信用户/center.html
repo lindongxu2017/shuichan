@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>水产</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- <link rel="shortcut icon" href="/favicon.ico"> -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="stylesheet" href="lib/sui/sm.min.css">
+    <link rel="stylesheet" href="lib/sui/sm-extend.min.css">
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+        .content{
+            background: #FAFAFA;
+            font-size: .7rem;
+            padding-bottom: 30px;
+        }
+        .head{
+            height: 160px;
+            text-align: center;
+            background: url(images/icon/banner.png) 100% 100%;
+        }
+        .head img{
+            width: 60px;
+            vertical-align: bottom;
+            margin-right: 15px;
+        }
+        .head .head_info{
+            padding-top: 50px;
+            text-align: left;
+            padding-left: 30px;
+        }
+        .head .head_info>div{
+            display: inline-block;
+        }
+        .head .head_info p{
+            text-align: left;
+            color: #fff;
+            margin: 0;
+            font-size: .8rem;
+            padding-left: 3px;
+        }
+
+        .my-order .list-block{
+            margin: 0;
+            font-size: .7rem;
+        }
+        .my-order .row{
+            padding: 15px;
+        }
+        .my-order .row .col-20{
+            text-align: center;
+        }
+        .my-order .row .col-20 img{
+            width: 30px;
+        }
+        .my-order .row .col-20 span{
+            display: inline-block;
+            color: #1296DB;
+        }
+        .my-order .list-block .item-content{
+            padding-right: .75rem;
+        }
+        .my-order .list-block .item-inner{
+            border-bottom: 1px solid #e7e7e7;
+        }
+        .my-order .list-block ul:after{
+            height: 0;
+        }
+
+        .link-group .list-block{
+            margin: 0;
+            font-size: .7rem;
+            margin-top: 7px;
+        }
+        .link-group .list-block .item-title{
+            color: #3d4145;
+        }
+        .link-group .list-block .item-title img{
+            vertical-align: top;
+            margin-right: 5px;
+        }
+
+        .count{
+            position: relative;
+        }
+        .count:after{
+            content: '9';
+            display: block;
+            width: 16px;
+            height: 16px;
+            border-radius:50%;
+            background: #f00;
+            color:#fff; 
+            position: absolute;
+            top: -5px;
+            right: -12px;
+            font-size: 12px;
+            line-height: 16px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-group">
+        <div class="page page-current">
+            <!-- 标题栏 -->
+            <!-- <header class="bar bar-nav">
+                <a class="icon icon-me pull-left open-panel"></a>
+                <h1 class="title">标题</h1>
+            </header> -->
+            <!-- 底部导航 -->
+            <nav class="bar bar-tab backgoundColor-white">
+                <a class="tab-item external" href="index.html">
+                    <img class="icon" src="images/icon/home-default.png">
+                    <span class="tab-label">首页</span>
+                </a>
+                <!-- <a class="tab-item external" href="#">
+                    <img class="icon" src="images/icon/order-default.png">
+                    <span class="tab-label">我的订单</span>
+                </a> -->
+                <a class="tab-item external" href="pintuan.html">
+                    <img class="icon" src="images/icon/pintuan-default.png">
+                    <span class="tab-label">捕捞拼团</span>
+                </a>
+                <a class="tab-item external active" href="">
+                    <img class="icon" src="images/icon/center.png">
+                    <span class="tab-label">个人中心</span>
+                </a>
+            </nav>
+
+            <!-- 内容区 -->
+            <div class="content">
+                <div class="head">
+                    <div class="head_info">
+                        <img src="images/head_img.png">
+                        <div>
+                            <p>海底之家</p>
+                            <p>余额：<span>100</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="my-order backgoundColor-white">
+                    <div class="list-block">
+                        <ul>
+                            <li class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title">我的订单</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="row">
+                        <div class="col-20"><img src="images/pay.png"><span class="count">未支付</span></div>
+                        <div class="col-20"><img src="images/received.png"><span>待发货</span></div>
+                        <div class="col-20"><img src="images/send.png"><span>待收货</span></div>
+                        <div class="col-20"><img src="images/success.png"><span>已完成</span></div>
+                        <div class="col-20"><img src="images/refund.png"><span>退款订单</span></div>
+                    </div>
+                </div>
+
+                <div class="link-group">
+                    <div class="list-block">
+                        <ul>
+                            <li class="item-content item-link">
+                                <div class="item-inner">
+                                    <div class="item-title"><img src="images/icon/info.png" width="18"></span>个人信息</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="list-block">
+                        <ul>
+                            <li class="item-content item-link">
+                                <div class="item-inner">
+                                    <div class="item-title"><img src="images/icon/adress.png" width="18">收货地址</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="merchants_settled.html" class="close-popup">
+                        <div class="list-block">
+                            <ul>
+                                <li class="item-content item-link">
+                                    <div class="item-inner">
+                                        <div class="item-title"><img src="images/icon/ruzhu.png" width="18">商家入驻</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script type='text/javascript' src='lib/sui/zepto.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='lib/sui/sm.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='lib/sui/sm-extend.min.js' charset='utf-8'></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script>
+
+
+        /*function a(index){
+           var a = index*100;
+           return a;
+        }
+
+        function b(num){
+            return a(num)
+        }
+
+
+        console.log(b(2))*/
+
+        
+
+        $.init()
+    </script>
+</body>
+</html>

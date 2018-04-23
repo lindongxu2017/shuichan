@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+        <title>水产交易平台</title>
+
+        <!-- Bootstrap -->
+        <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/main_public.css" rel="stylesheet">
+        <link href="css/main_reset.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+        <link  href="css/layout.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <style>
+            .form-control{
+                width: auto;
+                margin-bottom: 15px;
+                background: none;
+                border: 1px solid #c8c8c8;  
+                border-radius: 5px;
+            }
+            .uncheck{
+                -moz-user-select:none; /*火狐*/
+                -webkit-user-select:none; /*webkit浏览器*/
+                -ms-user-select:none; /*IE10*/
+                 -khtml-user-select:none; /*早期浏览器*/
+                user-select:none;
+            }
+            .switch{
+                padding-left: 15px;
+                padding-top: 7px;
+                margin-bottom: 15px; 
+            }
+            .upload{
+                width: 130px;
+                height: 100px;
+                background: #E5E5E5;
+                position: relative;
+                margin-left: 30px;
+                margin-bottom: 15px;
+                text-align: center;
+                line-height: 100px;
+                color: #777;
+            }
+            .upload input{
+                width: 130px;
+                height: 100px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0;
+            }
+            .upload + .col-md-8 img{
+                width: 130px;
+                height: 100px;
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+    <body>
+            <!-- 顶部导航 -->
+            <div class="top-nav">
+                <div class="row" style="width:100%">
+                    <div class="col-md-1" style="padding:0">
+                        <div class="top-nav-logo">LOGO</div>
+                    </div>
+                    <div class="col-md-11" style="padding:0">
+                        <div class="top-title">商家管理后台</div>
+                        <div class="row top-nav-link">
+                            <ul class="nav nav-tabs">
+                                <li role="presentation"><a href="order_list.html">我的订单</a></li>
+                                <li role="presentation" class="active"><a href="my_goods.html">我的商品</a></li>
+                                <li role="presentation"><a href="marketing.html">营销功能</a></li>
+                                <li role="presentation"><a href="my_account.html">我的账户</a></li>
+                                <li role="presentation"><a href="store_set.html">店铺设置</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+
+            
+            <div class="row">
+                <!-- 侧栏导航 -->
+                <div class="col-md-1 left-nav">
+                    <ul class="left-nav-link">
+                        <a href="my_goods.html"><li class="left-nav-active">商品列表</li></a>
+                    </ul>
+                </div>
+                <div class="col-md-11 main-area">
+                    <!-- 主体内容 -->
+                    <div class="main-content">
+                        <!-- 面包屑 -->
+                        <ol class="breadcrumb">
+                            <li><a href="my_goods.html">我的商品</a></li>
+                            <li><a href="my_goods.html">商品列表</a></li>
+                            <li class="active">添加商品</li>
+                        </ol>
+
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-md-1 control-label">上传图片：</label>
+                                <div class="col-md-3 upload">
+                                    <span>上传图片</span>
+                                    <input type="file">
+                                </div>
+                                <div class="col-md-8">
+                                    <img src="#" alt="">    <!-- 没上传图片之前隐藏 -->
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-1 control-label">商品名称：</label>
+                                <div class="col-md-3">
+                                    <input type="text" class="form-control" placeholder="请输入商品名称">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-1 control-label">每日数量：</label>
+                                <div class="col-md-3">
+                                    <input type="text" class="form-control" placeholder="请输入每日数量">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-1 control-label">总数量：</label>
+                                <div class="col-md-3">
+                                    <input type="text" class="form-control" placeholder="请输入总数量">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-1 control-label">单价：</label>
+                                <div class="col-md-3">
+                                    <input type="text" class="form-control" placeholder="请输入单价">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-1 control-label">单位：</label>
+                                <div class="col-md-3">
+                                    <input type="text" class="form-control" placeholder="请输入商品单位">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-1 control-label">商品简述：</label>
+                                <div class="col-md-10">
+                                    <textarea name="" id="" cols="50" rows="2" placeholder="请输入商品简述" class="form-control"></textarea>
+                                    <!-- <textarea col=""  ></textarea> -->
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-1 control-label">商品详情：</label>
+                                <div class="col-md-10">
+                                    <textarea name="" id="" cols="50" rows="4" placeholder="请输入商品详情" class="form-control"></textarea>
+                                    <!-- <textarea col=""  ></textarea> -->
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-1 control-label">开启促销：</label>
+                                <div class="col-md-3">
+                                    <label class="switch"><input type="checkbox"> <span class="uncheck">开启</span></label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-1 control-label">上、下架：</label>
+                                <div class="col-md-3">
+                                    <select name="" id="" class="form-control">
+                                        <option value="1">上架</option>
+                                        <option value="2">下架</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group" style="margin-top:30px;">
+                                <div class="col-md-offset-1 col-md-10">
+                                    <button type="submit" class="btn btn-custom form-control">确认</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                    
+                </div>
+            </div>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="lib/jquery/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+        <script src="js/tools.js"></script>
+        <script src="js/main.js"></script>
+
+        <script>
+
+        </script>
+
+    </body>
+</html>

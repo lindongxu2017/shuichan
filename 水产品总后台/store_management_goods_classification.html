@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+        <title>水产交易平台</title>
+
+        <!-- Bootstrap -->
+        <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/main_public.css" rel="stylesheet">
+        <link href="css/main_reset.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+        <link  href="css/layout.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <style>
+            .table>thead>tr>th{
+                padding: 10px 15px;
+                line-height: 30px;
+            }
+            .width{
+                width: 200px;
+            }
+            .width-200{
+                width: 200px;
+            }
+            .mask-l,.mask-r{
+                position: relative;
+            }
+            .mask-l:before{
+                content: '';
+                width: 70px;
+                height: 2px;
+                background:#F0F4F7;
+                position: absolute;
+                bottom: -1px;
+                left: 0;
+            }
+            .mask-r:before{
+                content: '';
+                width: 70px;
+                height: 2px;
+                background:#F0F4F7;
+                position: absolute;
+                bottom: -1px;
+                right: 0;
+            }
+            .table{
+                background: #F0F4F7;
+            }
+            .table.table{
+                background: #F0F4F7;
+            }
+            .table>tbody>tr>td{
+                border-bottom: 1px solid #bbb;
+            }
+            .text-r{
+                text-align: right;
+            }
+            .text-l{
+                text-align: left;
+            }
+            .secondAdd{
+                cursor: pointer;
+                text-align: center;
+                background: #D0D3D6;
+            }
+            .modify-style{
+                background: #fff;
+                color: #003C7A;
+            }
+            .detele-style{
+                color: #fff;
+                background: #003C7A;
+                border: 1px solid #fff;
+            }
+            .add_big_classfy{
+                position: relative;
+                height: 52px;
+
+            }
+            .add_big_classfy .btn{
+                position: absolute;
+                right: 100px;
+                top: 11px;
+            }
+            #big_classfy{
+                height: 100%;
+                line-height: 38px;
+            }
+            .fold{
+                font-size: 20px;
+            }
+
+            .border-width{
+                width: auto;
+                text-align: left;
+            }
+        </style>
+    </head>
+    <body>
+            <!-- 顶部导航 -->
+            <div class="top-nav">
+                <div class="top-nav-logo">LOGO</div>
+                <div class="top-nav-link">
+                    <ul class="nav nav-tabs">
+                        <li role="presentation"><a href="index.html">首页</a></li>
+                        <li role="presentation"><a href="user_management_user_list.html">用户管理</a></li>
+                        <li role="presentation" class="active"><a href="">店铺管理</a></li>
+                        <li role="presentation"><a href="order_management_order_list.html">订单管理</a></li>
+                        <li role="presentation"><a href="logistics_company.html">物流公司</a></li>
+                        <li role="presentation"><a href="system_management.html">系统管理</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            
+            <div class="row">
+                <!-- 侧栏导航 -->
+                <div class="col-md-1 left-nav">
+                    <ul class="left-nav-link">
+                        <a href="store_management_apply_list.html"><li style="padding-left:25px;">入驻商申请列表</li></a>
+                        <a href="store_management_goods_classification.html"><li class="left-nav-active">商品分类</li></a>
+                        <a href="store_management_goods_list.html"><li>商品列表</li></a>
+                        <a href="store_management_goods_unit.html"><li>商品单位</li></a>
+                        <a href="store_management_region_set.html"><li>区域设置</li></a>
+                    </ul>
+                </div>
+                <div class="col-md-11 main-area">
+                    <!-- 主体内容 -->
+                    <div class="main-content">
+                        <!-- 面包屑 -->
+                        <ol class="breadcrumb">
+                            <li><a href="store_management_apply_list.html">店铺管理</a></li>
+                            <li class="active">商品分类</li>
+                        </ol>
+                        <!-- <div class="user-manager-btn-group">
+                            <a href="user_management_user_add.html"><button class="btn btn-sm btn-primary">添加用户</button></a>
+                        </div> -->
+
+                        <!-- 一级表格 -->
+                        <table class="table table-hover">
+                            <thead>
+                                <tr class="white" style="background:#003C7A;">
+                                    <th class="border-width"><span class="fold">-</span> 鱼类sadaaaaaaaaaa</th>
+                                    <th class="text-r">
+                                        <button class="btn btn-sm modify-style">修改</button>
+                                    </th>
+                                    <th class="width text-l">
+                                        <button class="btn btn-sm btn-danger">删除</button>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="3" style="padding-top:0;border:0;">
+                                        <!-- 二级表格 -->
+                                        <table class="table">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="width-200 mask-l">鲫鱼</td>
+                                                    <td class="text-r">
+                                                        <button class="btn btn-sm btn-primary backColor-blue">修改</button>
+                                                    </td>
+                                                    <td class="width mask-r text-l">
+                                                        <button class="btn btn-sm btn-danger" style="margin-left:17px;">删除</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="width-200 mask-l">鲈鱼</td>
+                                                    <td class="text-r">
+                                                        <button class="btn btn-sm btn-primary backColor-blue">修改</button>
+                                                    </td>
+                                                    <td class="width mask-r text-l">
+                                                        <button class="btn btn-sm btn-danger" style="margin-left:17px;">删除</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="width-200 mask-l">桂花鱼</td>
+                                                    <td class="text-r">
+                                                        <button class="btn btn-sm btn-primary backColor-blue">修改</button>
+                                                    </td>
+                                                    <td class="width mask-r text-l">
+                                                        <button class="btn btn-sm btn-danger" style="margin-left:17px;">删除</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <td colspan="2" style="padding-left:70px;">
+                                                        <div class="form-control secondAdd" id="small_classfy_One" onclick="add_small_Classfy('One',1)">+ 点击添加小分类</div>
+                                                        <input type="text" class="form-control" style="display:none">
+                                                    </td>
+                                                    <td class="text-l">
+                                                        <button class="btn btn-sm btn-primary backColor-blue" style="margin-left:17px;" onclick="add_small_Classfy('One',2)">添加</button>
+                                                    </td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- 一级表格 -->
+                        <table class="table table-hover">
+                            <thead>
+                                <tr class="white" style="background:#003C7A;">
+                                    <th class="border-width"><span class="fold">-</span> 贝类</th>
+                                    <th class="text-r">
+                                        <button class="btn btn-sm modify-style">修改</button>
+                                    </th>
+                                    <th class="width text-l">
+                                        
+                                        <button class="btn btn-sm btn-danger">删除</button>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="3" style="padding-top:0;border:0;">
+                                        <!-- 二级表格 -->
+                                        <table class="table">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="width-200 mask-l">鲫鱼</td>
+                                                    <td class="text-r">
+                                                        <button class="btn btn-sm btn-primary backColor-blue">修改</button>
+                                                    </td>
+                                                    <td class="width mask-r text-l">
+                                                        <button class="btn btn-sm btn-danger" style="margin-left:17px;">删除</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                   
+                                                    <td colspan="2" style="padding-left:70px;">
+                                                        <div class="form-control secondAdd" id="small_classfy_Two" onclick="add_small_Classfy('Two',1)">+ 点击添加小分类</div>
+                                                        <input type="text" class="form-control" style="display:none">
+                                                    </td>
+                                                    <td class="width mask-r text-l">
+                                                        <button class="btn btn-sm btn-primary backColor-blue" style="margin-left:17px;" onclick="add_small_Classfy('Two',2)">添加</button>
+                                                    </td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="add_big_classfy">
+
+                            <div class="form-control secondAdd" id="big_classfy" onclick="add_big_Classfy(1)"><span style="margin-left:-130px;">+ 点击添加大分类</span></div>
+                            <input type="text" class="form-control" style="display:none;height:52px;">
+
+                            <button class="btn btn-sm btn-primary backColor-blue" style="margin-left:17px;" onclick="add_big_Classfy(2)">添加</button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="lib/jquery/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+        <script src="js/tools.js"></script>
+        <script src="js/main.js"></script>
+
+        <script>
+            
+            function add_small_Classfy(id,num){
+                switch(num){
+                    case 1:
+                        $('#small_classfy_' + id).hide();
+                        $('#small_classfy_'+id+' +input').show().focus();
+                        break;
+                    case 2:
+                        $('#small_classfy_' + id).show();
+                        $('#small_classfy_' + id + ' + input').hide();
+                }
+            }
+
+            function add_big_Classfy(num){
+                switch(num){
+                    case 1:
+                        $('#big_classfy').hide();
+                        $('#big_classfy + input').show().focus();
+                        break;
+                    case 2:
+                        $('#big_classfy').show();
+                        $('#big_classfy + input').hide();
+                }
+            }
+            
+            $('.table thead').click(function(){
+                if ($(this).next('tbody').css('display') == 'none') {
+                    $(this).next('tbody').show();
+                    $(this).find('span[class=fold]').html('-')
+                }else{
+                    $(this).next('tbody').hide();
+                    $(this).find('span[class=fold]').html('+')
+                }
+            })
+
+            $('table thead button').click(function(event){
+                event.stopPropagation()
+            })
+        </script>
+
+    </body>
+</html>

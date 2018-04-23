@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>捕捞后台</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="stylesheet" href="lib/sui/sm.min.css">
+    <link rel="stylesheet" href="lib/sui/sm-extend.min.css">
+    <link rel="stylesheet" href="css/main_public.css">
+
+</head>
+<body>
+    <div class="page-group">
+        <div class="page page-current bg-white">
+            <!-- nav导航 -->
+            <nav class="bar bar-tab">
+                <a class="tab-item external" href="order_management.html">
+                    <img class="icon icon-home" src="images/icon/order-default.png">
+                    <span class="tab-label">订单管理</span>
+                </a>
+                <a class="tab-item external active" href="">
+                    <img class="icon icon-home" src="images/icon/pintuan-checked.png">
+                    <span class="tab-label">发起拼团</span>
+                </a>
+                <a class="tab-item external" href="shop_info.html">
+                    <img class="icon icon-home" src="images/icon/info-default.png">
+                    <span class="tab-label">店铺资料</span>
+                </a>
+                <a class="tab-item external" href="center.html">
+                    <img class="icon icon-home" src="images/icon/center-default.png">
+                    <span class="tab-label">我的账户</span>
+                </a>
+            </nav>
+            <!-- 这里是页面内容区 -->
+            <div class="content bg-gray">
+                <div class="list-block">
+                    <ul>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">商品分类</div>
+                                    <div class="item-input">
+                                        <select>
+                                            <option value="" style="display: none;" disabled selected>请选择分类</option>
+                                            <option>Male</option>
+                                            <option>Female</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">选择商品</div>
+                                    <div class="item-input">
+                                        <select>
+                                            <option value="" style="display: none;" disabled selected>请选择商品</option>
+                                            <option>Male</option>
+                                            <option>Female</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="list-block mt-7">
+                    <ul>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">商品名称</div>
+                                    <div class="item-input">
+                                        <input type="text" placeholder="请输入商品名称">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">货品单位</div>
+                                    <div class="item-input">
+                                        <input type="text" placeholder="请输入货品单位">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">总捕捞量</div>
+                                    <div class="item-input">
+                                        <input type="text" placeholder="请输入总捕捞量">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">可销售量</div>
+                                    <div class="item-input">
+                                        <input type="text" placeholder="请输入可销售量">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">最小起订量</div>
+                                    <div class="item-input">
+                                        <input type="text" placeholder="请输入最小起订量">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">预付比例(%)</div>
+                                    <div class="item-input">
+                                        <input type="text" placeholder="请输入预付比例">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">单价(人民币)</div>
+                                    <div class="item-input">
+                                        <input type="text" placeholder="请输入单价">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">产品规格</div>
+                                    <div class="item-input">
+                                        <input type="text" placeholder="请输入产品规格">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">内包装尺寸</div>
+                                    <div class="item-input">
+                                        <input type="text" placeholder="请输入内包装尺寸">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">外包装尺寸</div>
+                                    <div class="item-input">
+                                        <input type="text" placeholder="请输入外包装尺寸">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">发货形式</div>
+                                    <div class="item-input">
+                                        <input type="text" placeholder="请输入发货形式">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">商品属性</div>
+                                    <div class="item-input">
+                                        <select>
+                                            <option value="" style="display: none;" disabled selected>请选择商品属性</option>
+                                            <option>Male</option>
+                                            <option>Female</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">部位</div>
+                                    <div class="item-input">
+                                        <input type="text" placeholder="请输入部位">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">发货时间</div>
+                                    <div class="item-input">
+                                        <input type="date" placeholder="请选择发货时间">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">破损率(%)</div>
+                                    <div class="item-input">
+                                        <input type="text" placeholder="请输入破损率">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">缩水率(%)</div>
+                                    <div class="item-input">
+                                        <input type="text" placeholder="请输入缩水率">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">死亡率(%)</div>
+                                    <div class="item-input">
+                                        <input type="text" placeholder="请输入死亡率">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <p style="margin:0;padding:10px;padding-bottom:7px;font-size:14px;color:#3d4145;border-bottom:1px solid #ddd">拼团时间</p>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">开始时间</div>
+                                    <div class="item-input">
+                                        <input type="date" placeholder="请选择开始时间">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">结束时间</div>
+                                    <div class="item-input">
+                                        <input type="date" placeholder="请选择结束时间">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="list-block mt-7 bg-white">
+                    <ul>
+                        <li>
+                            <p style="margin:0;padding:10px;padding-bottom:7px;font-size:14px;color:#3d4145;border-bottom:1px solid #ddd">捕捞时间</p>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">开始时间</div>
+                                    <div class="item-input">
+                                        <input type="date" placeholder="请选择开始时间">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">结束时间</div>
+                                    <div class="item-input">
+                                        <input type="date" placeholder="请选择结束时间">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="list-block mt-7 bg-white">
+                    <ul>
+                        <li>
+                            <p style="margin:0;padding:10px;padding-bottom:7px;font-size:14px;color:#3d4145;border-bottom:1px solid #ddd">地址</p>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">发货地址</div>
+                                    <div class="item-input">
+                                        <input type="text" placeholder="请输入发货地址">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">原产地址</div>
+                                    <div class="item-input">
+                                        <input type="text" placeholder="请输入原产地址">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="list-block mt-7 bg-white">
+                    <p style="margin:0;padding:10px;padding-bottom:7px;font-size:14px;color:#3d4145;border-bottom:1px solid #ddd">协议</p>
+                    <textarea name="" id="" cols="30" rows="2" style="padding: 10px 15px">请输入内容</textarea>
+                </div>
+                <div class="list-block mt-7 bg-white">
+                    <p style="margin:0;padding:10px;padding-bottom:7px;font-size:14px;color:#3d4145;border-bottom:1px solid #ddd">简介</p>
+                    <textarea name="" id="" cols="30" rows="2" style="padding: 10px 15px">请输入内容</textarea>
+                </div>
+                <div class="list-block mt-7 bg-white">
+                    <p style="margin:0;padding:10px;padding-bottom:7px;font-size:14px;color:#3d4145;border-bottom:1px solid #ddd">详情</p>
+                    <textarea name="" id="" cols="30" rows="2" style="padding: 10px 15px">请输入内容</textarea>
+                </div>
+                <div class="content-block">
+                    <button class="my-btn-lg" onclick="goNext()">下一步</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type='text/javascript' src='lib/sui/zepto.min.js'></script>
+    <script type='text/javascript' src='lib/sui/sm.min.js'></script>
+    <script type='text/javascript' src='lib/sui/sm-extend.min.js'></script>
+    <script type="text/javascript" src="lib/vue/vue.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <script>
+        function goNext () {
+            window.location = 'launch_pintuan2.html'
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+        <title>登录</title>
+
+        <!-- Bootstrap -->
+        <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/main_public.css" rel="stylesheet">
+        <link href="css/main_reset.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+        <link href="css/layout.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <style>
+            body{
+                background: -webkit-linear-gradient(#005CBA, #fff) no-repeat; /* Safari 5.1 - 6.0 */
+                background: -o-linear-gradient(#005CBA, #fff) no-repeat; /* Opera 11.1 - 12.0 */
+                background: -moz-linear-gradient(#005CBA, #fff) no-repeat; /* Firefox 3.6 - 15 */
+                background: linear-gradient(#005CBA, #fff) no-repeat; /* 标准的语法 */
+            }
+            .login .form-control::-webkit-input-placeholder { /* WebKit browsers */
+                color:#eee;
+            }
+            .login .form-control:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+                color:#eee;
+                opacity:  1;
+            }
+            .login .form-control::-moz-placeholder { /* Mozilla Firefox 19+ */
+                color:#eee;
+                opacity:  1;
+            }
+            .login .form-control:-ms-input-placeholder { /* Internet Explorer 10+ */
+                color:#eee;
+            }
+            .system-title{
+                color: #fff;
+                margin-top: 7%;
+                text-align: center;
+            }
+            .login{
+                width: 60%;
+                margin: auto;
+                margin-top: 50px;
+                min-width: 570px;
+                border-radius: 10px;
+                /* background-color: #006FE0; */
+                padding: 40px 70px 200px 100px;
+                background: -webkit-linear-gradient(#005CBA, #fff) no-repeat; /* Safari 5.1 - 6.0 */
+                background: -o-linear-gradient(#005CBA, #fff) no-repeat; /* Opera 11.1 - 12.0 */
+                background: -moz-linear-gradient(#005CBA, #fff) no-repeat; /* Firefox 3.6 - 15 */
+                background: linear-gradient(#005CBA, #fff) no-repeat; /* 标准的语法 */
+            }
+            /* .login .row{
+                margin: 0;
+            } */
+            .login .logo{
+                padding-right: 70px;
+            }
+            .login .logo-content{
+                height: 150px;
+                margin-top: 40px;
+                border-right: 1px solid #fff;
+            }
+            @media screen and (max-width:768px){
+                .login .logo-content{
+                    border-right: 0;
+                }
+            }
+            .login .form-control{
+                border-color: #fff;
+            }
+            .login .login-form input{
+                color: #fff;
+                background: none;
+            }
+            .login-form button{
+                color: #006FE0;
+            }
+            .login .login-title{
+                color: #fff;
+                font-size: 24px;
+                font-weight: 500;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="container">
+
+            <h2 class="system-title">水产交易平台</h2>
+
+            <div class="login">
+                <div class="row">
+                    <div class="col-sm-6 logo">
+                        <div class="logo-content">
+                            <img src="#" alt="LOGO">
+                        </div>
+                    </div>
+                    <div class="col-sm-6 login-form">
+                        <form>
+                            <label class="login-title">登录</label>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="用户名/手机号">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="exampleInputEmail1" placeholder="请输入密码">
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="exampleInputAmount" placeholder="验证码">
+                                    <div class="input-group-addon"><img src="#" alt="code" width="50" height="20"></div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-block btn-default">登录</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div> 
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="lib/jquery/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+        <script src="js/tools.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

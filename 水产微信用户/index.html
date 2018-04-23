@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>水产</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- <link rel="shortcut icon" href="/favicon.ico"> -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="stylesheet" href="lib/sui/sm.min.css">
+    <link rel="stylesheet" href="lib/sui/sm-extend.min.css">
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+        
+        .content{
+            background: #FAFAFA;
+            font-size: .7rem;
+            padding-bottom: 30px;
+        }
+        .row .col-67{
+            width: 62.3333333%;
+            margin-left: 4%;
+            float: left;
+        }
+        .addresslist{
+            position: fixed;
+            z-index: 999;
+            margin: 0;
+            width: 100%;
+            background: #fff;
+            height: 0;
+            overflow: hidden;
+            transition:all .3s;
+        }
+        .location{
+            height: 44px;
+            padding-top: 6px;
+        }
+        .location .row .col-33{
+            position: relative;
+            color: #333147;
+        }
+        .location .row .col-33 img{
+            width: 30px;
+            margin-left: -15px;
+            vertical-align: sub;
+        }
+        .location .row .col-33 .desc{
+            width: 70px;
+            overflow: hidden;
+            white-space:nowrap;
+            display: inline-block;
+        }
+        .location .row .col-33 .icon-down{
+            position: absolute;
+            right: -5px;
+            top: 6px;
+        }
+        .location .row .col-67{
+            text-align: center;
+            position: relative;
+        }
+        .location .row .col-67 .search{
+            width: 90%;
+            height: 33px;
+            border-radius: 17px;
+            border: 1px solid #333147;
+            text-indent: 30px;
+            display: inline-block;
+        }
+        .location .row .col-67 .icon-search{
+            top: 2px;
+            left: 20px;
+            color: #333147;
+            font-size: 20px;
+            position: absolute;
+        }
+        .swiper-container{
+            padding-bottom: 0
+        }
+        .swiper-container .swiper-wrapper .swiper-slide img{
+            width: 100%;
+            height: 160px;
+        }
+        .swiper-container-horizontal>.swiper-pagination{
+            bottom: 0;
+        }
+        .swiper-pagination-bullet{
+            opacity: 1;
+            background: #fff;
+        }
+        .swiper-pagination-bullet-active{
+            opacity: 1;
+            background: #007aff;
+        }
+
+        .classfy{
+            padding: 0 15px;
+            padding-bottom: 15px;
+        }
+        .classfy .classfy-title{
+            margin: 0;
+            color: #666;
+            padding: 1em 0;
+            text-align: center;
+        }
+        .classfy .classfy-content > div{
+            width: 21%;
+            margin-left: 4%;
+            float: left;
+            text-align: center;
+        }
+        .classfy .classfy-content > div img{
+            width: 65%;
+            border-radius: 50%;
+            /* border: 1px solid #666; */
+        }
+        .classfy .classfy-content > div span{
+            color: #333147;
+            margin-bottom: 5px;
+            display: inline-block;
+        }
+
+        .business-list{
+            margin-top: 7px;
+        }
+        .business-list .list-block{
+            font-size: .7rem;
+            margin: 0;
+        }
+        .business-list .list-block .item-after{
+            color: #0894ec;
+        }
+        .business-list .list-block a{
+            color: #666;
+        }
+        .business-list .list-block .item-subtitle{
+            height: 25px;
+        }
+        .business-list .list-block .item-text{
+            height: auto;
+            font-size: .7rem;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #c8c8c8;
+        }
+        .business-list .list-block ul:before,.business-list .list-block ul:after{
+            height: 0;
+        }
+        .business-list .list-block .item-inner:after{
+            height: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-group">
+        <div class="page page-current">
+            <!-- 标题栏 -->
+            <!-- <header class="bar bar-nav">
+                <a class="icon icon-me pull-left open-panel"></a>
+                <h1 class="title">标题</h1>
+            </header> -->
+            <!-- 底部导航 -->
+            <nav class="bar bar-tab backgoundColor-white">
+                <a class="tab-item external active" href="index.html">
+                    <img class="icon" src="images/icon/home.png">
+                    <span class="tab-label">首页</span>
+                </a>
+               <!--  <a class="tab-item external" href="#">
+                   <img class="icon" src="images/icon/order-default.png">
+                   <span class="tab-label">我的订单</span>
+               </a> -->
+                <a class="tab-item external" href="pintuan.html">
+                    <img class="icon" src="images/icon/pintuan-default.png">
+                    <span class="tab-label">捕捞拼团</span>
+                </a>
+                <a class="tab-item external" href="center.html">
+                    <img class="icon" src="images/icon/center-default.png">
+                    <span class="tab-label">个人中心</span>
+                </a>
+            </nav>
+            <!-- addresslist -->
+            <div class="list-block contacts-block addresslist">
+                <div class="list-group">
+                    <ul>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title">地点1</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title">地点2</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title">地点3</div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>  
+            <!-- 内容区 -->
+            <div class="content infinite-scroll">
+                <!-- 头部定位、搜索 -->
+                <div class="content-block location backgoundColor-white">
+                    <div class="row">
+                        <div class="col-33 address">
+                            <img src="images/map.png">
+                            <span class="desc">郑州人民广场asdas</span>
+                            <span class="icon icon-down"></span>
+                        </div>
+                        <div class="col-67">
+                            <input type="text" class="search">
+                            <span class="icon icon-search"></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slider -->
+                <div class="swiper-container" data-space-between='10'>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/banner.jpg"></div>
+                        <div class="swiper-slide"><img src="images/banner.jpg"></div>
+                        <div class="swiper-slide"><img src="images/banner.jpg"></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <!-- 分类 -->
+                <div class="classfy backgoundColor-white">
+                    <p class="classfy-title">选择分类</p>
+                    <div class="row classfy-content">
+                        <div class="col-25"><img src="images/icon/xia.png"><span>虾类</span></div>
+                        <div class="col-25"><img src="images/icon/beilei.png"><span>贝类</span></div>
+                        <div class="col-25"><img src="images/icon/yu.png"><span>鱼类</span></div>
+                        <div class="col-25"><img src="images/icon/haishen.png"><span>海参</span></div>
+                        <div class="col-25"><img src="images/icon/xie.png"><span>蟹类</span></div>
+                        <div class="col-25"><img src="images/icon/zhanyu.png"><span>章鱼</span></div>
+                        <div class="col-25"><img src="images/icon/seafood.png"><span>海鲜鱼类</span></div>
+                        <div class="col-25"><img src="images/icon/other.png"><span>其他水产</span></div>
+                    </div>
+                </div>
+                <!-- 商家列表 -->
+                <div class="business-list">
+                    <div class="list-block media-list">
+                        <ul>
+                            <li v-for="(item,index) in list" class="content-list">
+                                <a href="store_details.html" class="item-content close-popup">
+                                    <div class="item-media"><img src="images/shop.png" style='width: 3rem;'></div>
+                                    <div class="item-inner">
+                                        <div class="item-title-row">
+                                            <div class="item-title">海底之家</div>
+                                            <div class="item-after">已售<span>100</span>单</div>
+                                        </div>
+                                        <div class="item-subtitle"><img src="images/star.png" width="100"></div>
+                                        <div class="item-text"><img src="images/location.png" style="width:15px;vertical-align: text-top;"><span> 深圳</span></div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 加载提示符 -->
+                <div class="infinite-scroll-preloader" v-show="lastIndex<total">
+                    <div class="preloader">
+                    </div>
+                </div>
+                <p id="noMore" style="text-align:center;font-size:12px;padding:10px 0;color:#999;" v-show="lastIndex>total">没有更多了...</p>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="lib/vue.js"></script>
+    <script type='text/javascript' src='lib/sui/zepto.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='lib/sui/sm.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='lib/sui/sm-extend.min.js' charset='utf-8'></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script>
+
+        var vm = new Vue({
+            el:'.content',
+            data:{
+                list:[],
+                currentPage:'1', //当前页
+                lastIndex:'',
+                total:'13', //数据总长度
+            },
+            mounted(){
+                this.loadData();
+                this.getData();
+            },
+            methods:{
+                getData:function(){
+                    var self = this;
+                    self.currentPage++;
+                    self.list.push('','','');
+                    self.lastIndex = self.list.length;
+                    /*myFn.ajax('get', {page:self.currentPage,feedback:1}, apiAddress.task.todayTask, function(res){
+                        self.list = self.list.concat(res.data.data);
+                    });*/
+                    console.log('当前页：' + self.currentPage + '当前长度：' + self.lastIndex)
+                },
+                loadData:function(){    
+
+                    var self = this;
+                    var loading = false;
+
+                    var maxItems = self.total;  //数据总长度
+
+                    // 注册'infinite'事件处理函数
+                    $(document).on('infinite', function() {
+
+                        // 如果正在加载，则退出
+                        if (loading) return;
+                        // 设置flag
+                        loading = true;
+                        
+                        setTimeout(function() {
+                          // 重置加载flag
+                            loading = false;
+                            if (self.lastIndex >= maxItems) {
+                                // 加载完毕，则注销无限加载事件，以防不必要的加载:$.detachInfiniteScroll($('.infinite-scroll'));多个无线滚动请自行根据自己代码逻辑判断注销时机
+                                // 删除加载提示符
+                                $('.infinite-scroll-preloader').hide();
+                                console.log('没有更多了')
+                                return false;
+                            }
+
+                            self.getData();//ajax加载数据
+                            // 更新最后加载的数据长度
+                            
+                            $.refreshScroller();
+                        }, 1000);
+                    });
+                }
+            }
+        }) 
+
+        var toggle = true;
+        $('.address').click(function(){
+            toggle = !toggle;
+            $('.addresslist').height($(window).height());
+        })
+        $('.addresslist li').click(function(){
+            toggle = !toggle;
+                $('.addresslist').height(0);
+        })
+
+        $.init()
+    </script>
+</body>
+</html>

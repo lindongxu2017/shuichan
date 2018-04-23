@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+        <title>水产交易平台</title>
+
+        <!-- Bootstrap -->
+        <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/main_public.css" rel="stylesheet">
+        <link href="css/main_reset.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+        <link  href="css/layout.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <style>
+            .row.info{
+                border-bottom: 1px solid #c8c8c8;
+            }
+            .row.info span{
+                color: #777;
+            }
+            .row.info label{
+                min-width: 100px;
+            }
+            .row.info > div{
+                margin-bottom: 25px;
+            }
+            
+            img{
+                width: 130px;
+                height: 100px;
+            }
+            .identity,.certificates{
+                margin-top: 20px;
+            }
+            .img_info{
+                padding-bottom: 30px;
+                border-bottom: 1px solid #c8c8c8;
+            }
+            .img_info p{
+                font-weight: bold;
+            }
+            .img_info ul{
+                padding-left: 0;
+            }
+            .img_info li{
+                list-style: none;
+                float: left;
+                margin-right: 30px;
+            } 
+            .form-control{
+                background: none;
+            } 
+            .info,.img_info{
+                padding-left: 15px;
+            }  
+        </style>
+    </head>
+    <body>
+            <!-- 顶部导航 -->
+            <div class="top-nav">
+                <div class="row" style="width:100%">
+                    <div class="col-md-1" style="padding:0">
+                        <div class="top-nav-logo">LOGO</div>
+                    </div>
+                    <div class="col-md-11" style="padding:0">
+                        <div class="top-title">商家管理后台</div>
+                        <div class="row top-nav-link">
+                            <ul class="nav nav-tabs">
+                                <li role="presentation"><a href="order_list.html">我的订单</a></li>
+                                <li role="presentation"><a href="my_goods.html">我的商品</a></li>
+                                <li role="presentation"><a href="marketing.html">营销功能</a></li>
+                                <li role="presentation"><a href="my_account.html">我的账户</a></li>
+                                <li role="presentation" class="active"><a href="store_set.html">店铺设置</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="row">
+                <!-- 侧栏导航 -->
+                <div class="col-md-1 left-nav">
+                    <ul class="left-nav-link">
+                        <a href="store_set.html"><li>店铺设置</li></a>
+                        <a href="store_info.html"><li class="left-nav-active">商户资料</li></a>
+                        <a href="store_settled.html"><li>商家入驻</li></a>
+                    </ul>
+                </div>
+                <div class="col-md-11 main-area">
+                    <!-- 主体内容 -->
+                    <div class="main-content">
+                        <!-- 面包屑 -->
+                        <ol class="breadcrumb">
+                            <li><a href="store_set.html">店铺设置</a></li>
+                            <li class="active">商户资料</li>
+                        </ol>
+
+                        <div class="row info">
+                            <div class="col-md-3">
+                                <label>申请店铺名称</label><span>海底之家</span>
+                            </div>
+                            <div class="col-md-3">
+                                <label>申请联系电话</label><span>18088888888</span>
+                            </div>
+                            <div class="col-md-6">
+                                <label>申请联系地址</label><span>深圳市龙岗区坂田街道</span>
+                            </div>
+                            <div class="col-md-3">
+                                <label>申请类型</label><span>超市</span>
+                            </div>
+                            <div class="col-md-9">
+                                <label>申请处理状态</label><span>通过审核</span>
+                            </div>
+                        </div>
+
+                        <div class="row img_info">
+                            <div class="col-md-12 identity">
+                                <p>身份证正反面</p>
+                                <img src="#" style="margin-right:30px;">
+                                <img src="#">
+                            </div>
+                            <div class="col-md-12 certificates">
+                                <ul>
+                                    <li><p>营业执照</p><img src="#" ></li>
+                                    <li><p>食物流通证</p><img src="#" ></li>
+                                    <li><p>健康证</p><img src="#" ></li>
+                                    <li><p>授权书</p><img src="#" ></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12" style="margin-top:20px;">
+                                <label>其他说明</label><span class="form-control" style="color:#777">通过审核</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="lib/jquery/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+        <script src="js/tools.js"></script>
+        <script src="js/main.js"></script>
+
+        <script>
+
+        </script>
+
+    </body>
+</html>

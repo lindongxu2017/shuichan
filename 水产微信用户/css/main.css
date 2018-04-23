@@ -1,0 +1,27 @@
+.backgoundColor-white{
+	background-color: #fff;
+}
+.red{
+	color: red!important;
+}
+.gray{
+	color: gray!important;
+}
+.blue{
+	color: #0894ec!important
+}
+.default{
+	color: #5f646e;
+}
+.margin-t-7{
+	margin-top: 7px;
+}
+.text-align-r{
+	text-align: right;
+}
+.text-align-l{
+	text-align: left;
+}
+.text-align-c{
+	text-align: center;
+}
